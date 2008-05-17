@@ -1,0 +1,27 @@
+;; Object src/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "src/"
+  :tables (list 
+   (semanticdb-table "FDLaunchManager.h"
+    :major-mode 'c++-mode
+    :tags 'nil
+    :file "FDLaunchManager.h"
+    :pointmax 230
+    )
+   (semanticdb-table "FDExceptionNames.h"
+    :major-mode 'c++-mode
+    :tags '(("FDOutOfMemoryException" variable (:pointer 1 :typemodifiers ("extern") :type ("NSString" type (:type "class") nil nil)) nil [195 242]) ("FDOutOfMemoryExceptionMessage" variable (:pointer 1 :typemodifiers ("extern") :type ("NSString" type (:type "class") nil nil)) nil [291 345]))
+    :file "FDExceptionNames.h"
+    :pointmax 346
+    )
+   (semanticdb-table "FDDMController.h"
+    :major-mode 'c++-mode
+    :tags '(("sender" variable (:type "int") nil [265 272]))
+    :file "FDDMController.h"
+    :pointmax 279
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )
