@@ -20,8 +20,9 @@
 
 - (IBAction)refresh:(id)sender
 {
-	FDLaunchctlWrapper *launchctl = [FDLaunchctlWrapper sharedLaunchctlWrapper];
-	[launchctl list];
+	[launchJobs release];
+	launchJobs = nil;
+	[launchJobsView reloadData];
 }
 
 // private method
@@ -31,6 +32,7 @@
 	{
 		NSLog(@"Refreshing launchJobs");
 		launchJobs = [[[FDLaunchctlWrapper sharedLaunchctlWrapper] list] retain];
+		[launchJobs sortUsingDescriptors:[launchJobsView sortDescriptors]];
 	}
 	return launchJobs;
 }

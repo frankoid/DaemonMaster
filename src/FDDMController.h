@@ -10,6 +10,7 @@
 
 
 @interface FDDMController : NSObject {
+	IBOutlet NSTableView *launchJobsView;
 	NSMutableArray *launchJobs;
 }
 
