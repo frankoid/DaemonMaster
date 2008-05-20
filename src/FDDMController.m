@@ -37,7 +37,7 @@
 	return launchJobs;
 }
 
-// NSTableView data source methods
+//-- NSTableView data source methods --
 - (int)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [[self launchJobs] count];
@@ -71,6 +71,14 @@
     NSArray *newDescriptors = [tableView sortDescriptors];
     [[self launchJobs] sortUsingDescriptors:newDescriptors];
     [tableView reloadData];
+}
+
+//-- NSWindow delegate methods --
+// This controller is the delegate of the main Daemon Master window
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+	[[NSApplication sharedApplication] terminate:self];
 }
 
 @end
