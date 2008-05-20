@@ -14,10 +14,12 @@
  */
 @interface FDLaunchJob : NSObject {
 	NSString *label;
-	pid_t pid;
-	int status;
+	NSNumber *pid;
 }
 
-- (id)initWithLabel:(NSString *)theLabel andStatus:(int)status andPid:(pid_t)thePid;
+- (id)initWithLabel:(NSString *)theLabel andPid:(NSNumber *)thePid;
+
+- (NSString *)label;
+- (NSNumber *)pid;
 
 @end

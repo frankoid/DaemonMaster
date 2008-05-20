@@ -14,7 +14,18 @@
 
 #define PIPE_BUF_SIZE 4096
 
+static FDLaunchctlWrapper *sharedLaunchctlWrapper;
+
 @implementation FDLaunchctlWrapper
+
++ (FDLaunchctlWrapper *)sharedLaunchctlWrapper
+{
+	if (sharedLaunchctlWrapper == nil)
+	{
+		sharedLaunchctlWrapper = [[FDLaunchctlWrapper alloc] init];
+	}
+	return sharedLaunchctlWrapper;
+}
 
 - (id)init
 {
@@ -38,7 +49,7 @@
 	void *buf = malloc(PIPE_BUF_SIZE);
 	if (buf == 0) [NSException raise:FDOutOfMemoryException format:FDOutOfMemoryExceptionMessage];
 	
-	NSMutableArray *list = [[NSMutableArray alloc] init];
+	NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
 	
 	//FJDNOTE: could use an NSTask here instead of popen (I didn't know about NSTask when I wrote this code)
 	FILE *launchctlPipe = popen("/bin/launchctl list", "r");
@@ -68,16 +79,18 @@
 			NSString *sPid = [components objectAtIndex:0];
 			NSNumber *pid = [sPid isEqualToString:@"-"] ? nil : [integerFormatter numberFromString:sPid];
 
-            NSString *sStatus = [components objectAtIndex:1];
-            NSNumber *status = [sStatus isEqualToString:@"-"] ? nil : [integerFormatter numberFromString:sStatus];
+//            NSString *sStatus = [components objectAtIndex:1];
+//            NSNumber *status = [sStatus isEqualToString:@"-"] ? nil : [integerFormatter numberFromString:sStatus];
 
             NSString *label = [components objectAtIndex:2];
 
-            NSLog(@"| %@ | %@ | %@ |", pid, status, label);
+//            NSLog(@"| %@ | %@ | %@ |", pid, status, label);
+			FDLaunchJob *job = [[FDLaunchJob alloc] initWithLabel:label andPid:pid];
+			[list addObject:job];
+			[job release];
 		}
 	}
 	
-	[list autorelease];
 	return list;
 }
 

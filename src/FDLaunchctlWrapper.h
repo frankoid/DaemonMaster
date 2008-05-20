@@ -13,6 +13,8 @@
 	NSNumberFormatter *integerFormatter;
 }
 
++ (FDLaunchctlWrapper *)sharedLaunchctlWrapper;
+
 - (id)init;
 - (void)dealloc;
 - (NSArray *)list;

@@ -11,4 +11,36 @@
 
 @implementation FDLaunchJob
 
+- (id)initWithLabel:(NSString *)theLabel andPid:(NSNumber *)thePid
+{
+    if (self = [super init])
+    {
+        label = [theLabel retain];
+        pid = [thePid retain];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [label release];
+    [pid release];
+    [super dealloc];
+}
+
+- (NSString *)description
+{
+	return [NSString stringWithFormat:@"%s %@", label, pid];
+}
+
+- (NSString *)label
+{
+	return label;
+}
+
+- (NSNumber *)pid
+{
+	return pid;
+}
+
 @end

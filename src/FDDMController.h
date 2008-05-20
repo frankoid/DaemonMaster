@@ -10,9 +10,15 @@
 
 
 @interface FDDMController : NSObject {
-
+	NSMutableArray *launchJobs;
 }
 
 - (IBAction)refresh:(id)sender;
+
+// NSTableView data source methods
+- (int)numberOfRowsInTableView:(NSTableView *)tableView;
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex;
+
+
 
 @end
