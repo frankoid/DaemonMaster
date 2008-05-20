@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		158D8E5F0DC6262D00521712 /* FDDMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 158D8E5E0DC6262D00521712 /* FDDMController.m */; };
 		159CC9320D6E16E000104BAE /* FDLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 159CC9310D6E16E000104BAE /* FDLaunchManager.m */; };
+		15CA28EB0DE36C9A001184D2 /* DaemonMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = 15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */; };
 		15D63F430DC611B900DFEC40 /* FDLaunchJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F420DC611B900DFEC40 /* FDLaunchJob.m */; };
 		15D63F5A0DC613C400DFEC40 /* FDLaunchctlWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F590DC613C400DFEC40 /* FDLaunchctlWrapper.m */; };
 		15D63F640DC61AD400DFEC40 /* FDExceptionNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F630DC61AD400DFEC40 /* FDExceptionNames.m */; };
@@ -26,6 +27,7 @@
 		158D8E5E0DC6262D00521712 /* FDDMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDDMController.m; path = src/FDDMController.m; sourceTree = "<group>"; };
 		159CC9300D6E16E000104BAE /* FDLaunchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLaunchManager.h; path = src/FDLaunchManager.h; sourceTree = "<group>"; };
 		159CC9310D6E16E000104BAE /* FDLaunchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLaunchManager.m; path = src/FDLaunchManager.m; sourceTree = "<group>"; };
+		15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = DaemonMaster.icns; path = Resources/DaemonMaster.icns; sourceTree = "<group>"; };
 		15D63F410DC611B900DFEC40 /* FDLaunchJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLaunchJob.h; path = src/FDLaunchJob.h; sourceTree = "<group>"; };
 		15D63F420DC611B900DFEC40 /* FDLaunchJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLaunchJob.m; path = src/FDLaunchJob.m; sourceTree = "<group>"; };
 		15D63F580DC613C400DFEC40 /* FDLaunchctlWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLaunchctlWrapper.h; path = src/FDLaunchctlWrapper.h; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
@@ -181,6 +184,7 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				15CA28EB0DE36C9A001184D2 /* DaemonMaster.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

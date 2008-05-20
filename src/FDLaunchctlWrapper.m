@@ -53,6 +53,7 @@ static FDLaunchctlWrapper *sharedLaunchctlWrapper;
 	
 	//FJDNOTE: could use an NSTask here instead of popen (I didn't know about NSTask when I wrote this code)
 	FILE *launchctlPipe = popen("/bin/launchctl list", "r");
+//	FILE *launchctlPipe = popen("sleep 3", "r");
     NSFileHandle *launchctlFH = [[NSFileHandle alloc] initWithFileDescriptor:fileno(launchctlPipe)];
 
     NSData *launchctlOutput = [launchctlFH readDataToEndOfFile];

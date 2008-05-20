@@ -11,6 +11,8 @@
 
 @interface FDDMController : NSObject {
 	IBOutlet NSTableView *launchJobsView;
+	IBOutlet NSProgressIndicator *refreshProgressIndicator;
+	NSTimer *refreshTimer;
 	NSMutableArray *launchJobs;
 }
 

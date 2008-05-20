@@ -14,15 +14,16 @@
 
 - (void)dealloc
 {
+	[refreshTimer invalidate];
 	[launchJobs release];
 	[super dealloc];
 }
 
-- (IBAction)refresh:(id)sender
+- (void)awakeFromNib
 {
-	[launchJobs release];
-	launchJobs = nil;
-	[launchJobsView reloadData];
+	refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refresh:) userInfo:self repeats:YES];
+//	[refreshTimer retain];
+	
 }
 
 // private method
@@ -35,6 +36,19 @@
 		[launchJobs sortUsingDescriptors:[launchJobsView sortDescriptors]];
 	}
 	return launchJobs;
+}
+
+- (IBAction)refresh:(id)sender
+{
+	[refreshProgressIndicator startAnimation:self];
+	[launchJobs release];
+	launchJobs = nil;
+	// I thought that the next line would be necessary necessary to keep the
+	// progress indicator spinning whilst the job information is being
+	// gathered, but it doesn't seem to be...
+//	[self launchJobs];
+	[launchJobsView reloadData];
+	[refreshProgressIndicator stopAnimation:self];
 }
 
 //-- NSTableView data source methods --
