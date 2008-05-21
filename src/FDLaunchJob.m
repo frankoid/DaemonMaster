@@ -40,6 +40,55 @@ static NSArray *launchJobLibrarySubdirs;
     [super dealloc];
 }
 
+// private: run a launchctl command that takes a configuration plist as an argumen
+- (BOOL)doLaunchctlPlistCommand:(NSString *)command withFinishNotificationObserver:(id)notificationObserver selector:(SEL)notificationSelector
+{
+	if (plistPath)
+	{
+		NSArray *args = [[NSArray alloc] initWithObjects:command, plistPath, nil];
+		NSTask *launchctlTask = [NSTask launchedTaskWithLaunchPath:@"/bin/launchctl" arguments:args];
+		[args release];
+		args = nil;
+		
+		if (notificationObserver)
+		{
+			[[NSNotificationCenter defaultCenter] addObserver:notificationObserver
+													 selector:notificationSelector
+														 name:NSTaskDidTerminateNotification 
+													   object:launchctlTask];
+		}
+		return YES;
+	}
+	else
+	{
+		return NO;
+	}
+}
+
+- (BOOL)load
+{
+	return [self loadWithFinishNotificationObserver:nil selector:nil];
+}
+
+- (BOOL)loadWithFinishNotificationObserver:(id)notificationObserver selector:(SEL)notificationSelector
+{
+    return [self doLaunchctlPlistCommand:@"load"
+          withFinishNotificationObserver:notificationObserver
+                                selector:notificationSelector];
+}
+
+- (BOOL)unload
+{
+	return [self unloadWithFinishNotificationObserver:nil selector:nil];
+}
+
+- (BOOL)unloadWithFinishNotificationObserver:(id)notificationObserver selector:(SEL)notificationSelector
+{
+    return [self doLaunchctlPlistCommand:@"unload"
+          withFinishNotificationObserver:notificationObserver
+                                selector:notificationSelector];
+}
+
 - (NSString *)description
 {
 	return [NSString stringWithFormat:@"%s %@", label, pid];

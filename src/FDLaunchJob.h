@@ -22,8 +22,13 @@
 
 - (id)initWithLabel:(NSString *)theLabel andPid:(NSNumber *)thePid;
 
+- (BOOL)load;
+- (BOOL)loadWithFinishNotificationObserver:(id)notificationObserver selector:(SEL)notificationSelector;
+
+- (BOOL)unload;
+- (BOOL)unloadWithFinishNotificationObserver:(id)notificationObserver selector:(SEL)notificationSelector;
+
 - (NSString *)label;
 - (NSNumber *)pid;
 - (NSString *)plistPath;
-
 @end

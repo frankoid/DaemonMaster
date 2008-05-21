@@ -21,12 +21,12 @@
 
 - (void)awakeFromNib
 {
-	refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refresh:) userInfo:self repeats:YES];
+	//refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refresh:) userInfo:self repeats:YES];
 //	[refreshTimer retain];
 	
 }
 
-// private method
+//-- Private Methods ----------------------------------------------------------
 - (NSMutableArray *)launchJobs
 {
 	if (launchJobs == nil)
@@ -38,7 +38,13 @@
 	return launchJobs;
 }
 
-//-- Actions --
+- (NSArray *)selectedLaunchJobs
+{
+    return [launchJobs objectsAtIndexes:[launchJobsView selectedRowIndexes]];
+    
+}
+
+//-- Actions ------------------------------------------------------------------
 
 - (IBAction)refresh:(id)sender
 {
@@ -51,6 +57,28 @@
 //	[self launchJobs];
 	[launchJobsView reloadData];
 	[refreshProgressIndicator stopAnimation:self];
+}
+
+- (void)taskDidFinish:(NSNotification *)notification
+{
+	NSTask *finishedTask = [notification object];
+    NSLog(@"task \"%@\" finished with status: %d. args = ", [finishedTask launchPath], [finishedTask terminationStatus], [finishedTask arguments]);
+}
+
+- (IBAction)load:(id)sender
+{
+    for (FDLaunchJob *launchJob in [self selectedLaunchJobs])
+    {
+        [launchJob loadWithFinishNotificationObserver:self selector:@selector(taskDidFinish:)];
+    }
+}
+
+- (IBAction)unload:(id)sender
+{
+    for (FDLaunchJob *launchJob in [self selectedLaunchJobs])
+    {
+        [launchJob unloadWithFinishNotificationObserver:self selector:@selector(taskDidFinish:)];
+    }
 }
 
 //-- NSTableView data source methods --
@@ -90,7 +118,7 @@
 }
 
 //-- NSWindow delegate methods --
-// This controller is the delegate of the main Daemon Master window
+// This controller is the delegate of the main DaemonMaster window
 
 - (void)windowWillClose:(NSNotification *)notification
 {
