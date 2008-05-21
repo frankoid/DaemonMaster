@@ -15,11 +15,15 @@
 @interface FDLaunchJob : NSObject {
 	NSString *label;
 	NSNumber *pid;
+	NSString *plistPath;
 }
+
++ (void)initialize;
 
 - (id)initWithLabel:(NSString *)theLabel andPid:(NSNumber *)thePid;
 
 - (NSString *)label;
 - (NSNumber *)pid;
+- (NSString *)plistPath;
 
 @end

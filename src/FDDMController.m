@@ -31,12 +31,14 @@
 {
 	if (launchJobs == nil)
 	{
-		NSLog(@"Refreshing launchJobs");
+		//NSLog(@"Refreshing launchJobs");
 		launchJobs = [[[FDLaunchctlWrapper sharedLaunchctlWrapper] list] retain];
 		[launchJobs sortUsingDescriptors:[launchJobsView sortDescriptors]];
 	}
 	return launchJobs;
 }
+
+//-- Actions --
 
 - (IBAction)refresh:(id)sender
 {

@@ -7,9 +7,16 @@
 //
 
 #import "FDLaunchJob.h"
-
+#import "FDPathUtils.h"
 
 @implementation FDLaunchJob
+
+static NSArray *launchJobLibrarySubdirs;
+
++ (void)initialize
+{
+	launchJobLibrarySubdirs = [[NSArray alloc] initWithObjects:@"LaunchAgents", @"LaunchDaemons", nil];
+}
 
 - (id)initWithLabel:(NSString *)theLabel andPid:(NSNumber *)thePid
 {
@@ -17,6 +24,10 @@
     {
         label = [theLabel retain];
         pid = [thePid retain];
+		plistPath = FDFileInPathSubdirectories(NSLibraryDirectory, NSAllDomainsMask,
+											   launchJobLibrarySubdirs,
+											   [NSString stringWithFormat:@"%@.plist", label]);
+		[plistPath retain];
     }
     return self;
 }
@@ -25,6 +36,7 @@
 {
     [label release];
     [pid release];
+	[plistPath release];
     [super dealloc];
 }
 
@@ -41,6 +53,11 @@
 - (NSNumber *)pid
 {
 	return pid;
+}
+
+- (NSString *)plistPath
+{
+	return plistPath;
 }
 
 @end

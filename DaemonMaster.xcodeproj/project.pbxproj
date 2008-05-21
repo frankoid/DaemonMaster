@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151CDF370DE42F24004396B9 /* FDPathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CDF360DE42F24004396B9 /* FDPathUtils.m */; };
 		158D8E5F0DC6262D00521712 /* FDDMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 158D8E5E0DC6262D00521712 /* FDDMController.m */; };
-		159CC9320D6E16E000104BAE /* FDLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 159CC9310D6E16E000104BAE /* FDLaunchManager.m */; };
 		15CA28EB0DE36C9A001184D2 /* DaemonMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = 15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */; };
 		15D63F430DC611B900DFEC40 /* FDLaunchJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F420DC611B900DFEC40 /* FDLaunchJob.m */; };
 		15D63F5A0DC613C400DFEC40 /* FDLaunchctlWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F590DC613C400DFEC40 /* FDLaunchctlWrapper.m */; };
@@ -23,10 +23,10 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		151CDF350DE42F24004396B9 /* FDPathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDPathUtils.h; path = src/FDPathUtils.h; sourceTree = "<group>"; };
+		151CDF360DE42F24004396B9 /* FDPathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDPathUtils.m; path = src/FDPathUtils.m; sourceTree = "<group>"; };
 		158D8E5D0DC6262D00521712 /* FDDMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDDMController.h; path = src/FDDMController.h; sourceTree = "<group>"; };
 		158D8E5E0DC6262D00521712 /* FDDMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDDMController.m; path = src/FDDMController.m; sourceTree = "<group>"; };
-		159CC9300D6E16E000104BAE /* FDLaunchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLaunchManager.h; path = src/FDLaunchManager.h; sourceTree = "<group>"; };
-		159CC9310D6E16E000104BAE /* FDLaunchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLaunchManager.m; path = src/FDLaunchManager.m; sourceTree = "<group>"; };
 		15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = DaemonMaster.icns; path = Resources/DaemonMaster.icns; sourceTree = "<group>"; };
 		15D63F410DC611B900DFEC40 /* FDLaunchJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLaunchJob.h; path = src/FDLaunchJob.h; sourceTree = "<group>"; };
 		15D63F420DC611B900DFEC40 /* FDLaunchJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLaunchJob.m; path = src/FDLaunchJob.m; sourceTree = "<group>"; };
@@ -64,8 +64,6 @@
 				15D63F590DC613C400DFEC40 /* FDLaunchctlWrapper.m */,
 				15D63F410DC611B900DFEC40 /* FDLaunchJob.h */,
 				15D63F420DC611B900DFEC40 /* FDLaunchJob.m */,
-				159CC9300D6E16E000104BAE /* FDLaunchManager.h */,
-				159CC9310D6E16E000104BAE /* FDLaunchManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -115,6 +113,8 @@
 				15D63F620DC61AD400DFEC40 /* FDExceptionNames.h */,
 				15D63F630DC61AD400DFEC40 /* FDExceptionNames.m */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				151CDF350DE42F24004396B9 /* FDPathUtils.h */,
+				151CDF360DE42F24004396B9 /* FDPathUtils.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -196,11 +196,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				159CC9320D6E16E000104BAE /* FDLaunchManager.m in Sources */,
 				15D63F430DC611B900DFEC40 /* FDLaunchJob.m in Sources */,
 				15D63F5A0DC613C400DFEC40 /* FDLaunchctlWrapper.m in Sources */,
 				15D63F640DC61AD400DFEC40 /* FDExceptionNames.m in Sources */,
 				158D8E5F0DC6262D00521712 /* FDDMController.m in Sources */,
+				151CDF370DE42F24004396B9 /* FDPathUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

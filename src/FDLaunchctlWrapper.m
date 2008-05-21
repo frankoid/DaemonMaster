@@ -70,25 +70,28 @@ static FDLaunchctlWrapper *sharedLaunchctlWrapper;
 	NSCharacterSet *whiteSpace = [NSCharacterSet characterSetWithCharactersInString:@"\t "];
 	for (NSString *line in eLines)
 	{
-		NSArray *components = [line componentsSeparatedByCharactersInSet:whiteSpace];
-		if ([components count] < 3)
+		if ([line length] > 0)
 		{
-			NSLog(@"not enough components in line %@", line);
-		}
-		else
-		{
-			NSString *sPid = [components objectAtIndex:0];
-			NSNumber *pid = [sPid isEqualToString:@"-"] ? nil : [integerFormatter numberFromString:sPid];
+			NSArray *components = [line componentsSeparatedByCharactersInSet:whiteSpace];
+			if ([components count] < 3)
+			{
+				NSLog(@"not enough components (%d) in line %@", [components count], line);
+			}
+			else
+			{
+				NSString *sPid = [components objectAtIndex:0];
+				NSNumber *pid = [sPid isEqualToString:@"-"] ? nil : [integerFormatter numberFromString:sPid];
 
-//            NSString *sStatus = [components objectAtIndex:1];
-//            NSNumber *status = [sStatus isEqualToString:@"-"] ? nil : [integerFormatter numberFromString:sStatus];
+	//            NSString *sStatus = [components objectAtIndex:1];
+	//            NSNumber *status = [sStatus isEqualToString:@"-"] ? nil : [integerFormatter numberFromString:sStatus];
 
-            NSString *label = [components objectAtIndex:2];
+				NSString *label = [components objectAtIndex:2];
 
-//            NSLog(@"| %@ | %@ | %@ |", pid, status, label);
-			FDLaunchJob *job = [[FDLaunchJob alloc] initWithLabel:label andPid:pid];
-			[list addObject:job];
-			[job release];
+	//            NSLog(@"| %@ | %@ | %@ |", pid, status, label);
+				FDLaunchJob *job = [[FDLaunchJob alloc] initWithLabel:label andPid:pid];
+				[list addObject:job];
+				[job release];
+			}
 		}
 	}
 	
