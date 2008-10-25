@@ -1,0 +1,8 @@
+Notes on how ps gets the full command line
+------------------------------------------
+
+kvm_getprocs is NOT used. Uses sysctl to read kernel mem instead (doesn't work when run as a normal user, has to be run as root).
+
+kp[entry].kp_proc.p_comm only has truncated executable leafname in it.
+
+*** getprocline in print.c gets the whole argv ***

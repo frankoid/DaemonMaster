@@ -13,11 +13,17 @@
 	IBOutlet NSProgressIndicator *refreshProgressIndicator;
 	NSTimer *refreshTimer;
 	NSMutableArray *launchJobs;
+	
+	BOOL runAsRoot;
 }
 
 - (IBAction)refresh:(id)sender;
 - (IBAction)load:(id)sender;
 - (IBAction)unload:(id)sender;
+
+// Properties
+- (BOOL)runAsRoot;
+- (void)setRunAsRoot:(BOOL)newRunAsRoot;
 
 // NSTableView data source methods
 - (int)numberOfRowsInTableView:(NSTableView *)tableView;

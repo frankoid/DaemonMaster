@@ -1,0 +1,1 @@
+_LSDisplayData seems to be used by "lsregister -dump" to get (or maybe print) a list of everything registered with launch services

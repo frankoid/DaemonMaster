@@ -23,7 +23,8 @@
 {
 	//refreshTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refresh:) userInfo:self repeats:YES];
 //	[refreshTimer retain];
-	
+	NSLog(@"In FDDMController awakeFromNib");
+	runAsRoot = NO;
 }
 
 //-- Private Methods ----------------------------------------------------------
@@ -79,6 +80,18 @@
     {
         [launchJob unloadWithFinishNotificationObserver:self selector:@selector(taskDidFinish:)];
     }
+}
+
+//-- Actions ------------------------------------------------------------------
+
+- (BOOL)runAsRoot
+{
+	return runAsRoot;
+}
+
+- (void)setRunAsRoot:(BOOL)newRunAsRoot
+{
+	runAsRoot = newRunAsRoot;
 }
 
 //-- NSTableView data source methods --

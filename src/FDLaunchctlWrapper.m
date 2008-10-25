@@ -98,4 +98,26 @@ static FDLaunchctlWrapper *sharedLaunchctlWrapper;
 	return list;
 }
 
+-(void) testAS
+{
+	// Create an Authorization Reference Without Rights
+	AuthorizationRef myAuthorizationRef;
+	OSStatus myStatus;
+	myStatus = AuthorizationCreate (NULL, kAuthorizationEmptyEnvironment,
+									kAuthorizationFlagDefaults, &myAuthorizationRef);
+	
+	// Specify authorization options for preauthorization
+	AuthorizationFlags myFlags;
+	myFlags = kAuthorizationFlagDefaults |
+		      kAuthorizationFlagExtendRights |
+              kAuthorizationFlagInteractionAllowed |
+              kAuthorizationFlagPreAuthorize;
+	
+	// Preauthorize
+//	myStatus = AuthorizationCopyRights (myAuthorizationRef, &myRights,
+//										kAuthorizationEmptyEnvironment, myFlags, NULL);
+	
+	
+}
+
 @end

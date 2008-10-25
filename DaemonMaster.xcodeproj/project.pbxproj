@@ -7,26 +7,112 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151C835C0E2E75A300053C9B /* FDAppListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151C835B0E2E75A200053C9B /* FDAppListController.m */; };
+		151C842E0E2E8AAA00053C9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151C842D0E2E8AAA00053C9B /* Security.framework */; };
 		151CDF370DE42F24004396B9 /* FDPathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CDF360DE42F24004396B9 /* FDPathUtils.m */; };
 		158D8E5F0DC6262D00521712 /* FDDMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 158D8E5E0DC6262D00521712 /* FDDMController.m */; };
+		158E37E90EAE5AE900B28ECD /* FDProcessInfoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 158E37E80EAE5AE900B28ECD /* FDProcessInfoReader.m */; };
 		15CA28EB0DE36C9A001184D2 /* DaemonMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = 15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */; };
 		15D63F430DC611B900DFEC40 /* FDLaunchJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F420DC611B900DFEC40 /* FDLaunchJob.m */; };
 		15D63F5A0DC613C400DFEC40 /* FDLaunchctlWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F590DC613C400DFEC40 /* FDLaunchctlWrapper.m */; };
 		15D63F640DC61AD400DFEC40 /* FDExceptionNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F630DC61AD400DFEC40 /* FDExceptionNames.m */; };
+		15E7F6380EAE935A00D0D85D /* SSYAuthorizedTaskmaster+DaemonMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7F6370EAE935A00D0D85D /* SSYAuthorizedTaskmaster+DaemonMaster.m */; };
+		15E7F6910EAE961A00D0D85D /* FDDMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E7F6900EAE961A00D0D85D /* FDDMAppDelegate.m */; };
+		15E7F6940EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.c in Sources */ = {isa = PBXBuildFile; fileRef = 15E7F6920EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.c */; };
+		15E7F6D30EAE99C100D0D85D /* AuthorizedTaskHelperToolInstaller in Resources */ = {isa = PBXBuildFile; fileRef = 15E7F6D10EAE99C100D0D85D /* AuthorizedTaskHelperToolInstaller */; };
+		15E7F6D50EAE99C500D0D85D /* AuthorizedTaskHelperToolInstaller in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15E7F6D10EAE99C100D0D85D /* AuthorizedTaskHelperToolInstaller */; };
+		15E7F7890EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster in Resources */ = {isa = PBXBuildFile; fileRef = 15E7F7880EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */; };
+		15E7F78A0EAEA1B500D0D85D /* AuthorizedTaskHelperTool_DaemonMaster in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15E7F7880EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */; };
+		15E7F87D0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E7F87C0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework */; };
+		15E7F8860EAEB02500D0D85D /* SSYAuthorizedTaskmaster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15E7F87C0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		15E7F6780EAE95B900D0D85D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E449EC6E0B619E02009E190A;
+			remoteInfo = AuthorizedTaskHelperToolInstaller;
+		};
+		15E7F67A0EAE95B900D0D85D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 48A77B4D0DB7DEB800B5F8B5;
+			remoteInfo = SSYAuthorizedTaskmaster;
+		};
+		15E7F72C0EAE9F6600D0D85D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E449EC630B619E02009E190A;
+			remoteInfo = AuthorizedTaskHelperToolInstaller;
+		};
+		15E7F7840EAEA12A00D0D85D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 15E7F7810EAEA10C00D0D85D;
+			remoteInfo = AuthorizedTaskHelperTool_DaemonMaster;
+		};
+		15E7F78B0EAEA1C000D0D85D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 15E7F76D0EAEA10C00D0D85D;
+			remoteInfo = AuthorizedTaskHelperTool_DaemonMaster;
+		};
+		15E7F87E0EAEAFE500D0D85D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 48A77B4C0DB7DEB800B5F8B5;
+			remoteInfo = SSYAuthorizedTaskmaster;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		15E7F66A0EAE95AC00D0D85D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15E7F8860EAEB02500D0D85D /* SSYAuthorizedTaskmaster.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15E7F6BD0EAE98FD00D0D85D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				15E7F6D50EAE99C500D0D85D /* AuthorizedTaskHelperToolInstaller in CopyFiles */,
+				15E7F78A0EAEA1B500D0D85D /* AuthorizedTaskHelperTool_DaemonMaster in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		151C835A0E2E75A200053C9B /* FDAppListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDAppListController.h; path = src/FDAppListController.h; sourceTree = "<group>"; };
+		151C835B0E2E75A200053C9B /* FDAppListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDAppListController.m; path = src/FDAppListController.m; sourceTree = "<group>"; };
+		151C842D0E2E8AAA00053C9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		151CDF350DE42F24004396B9 /* FDPathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDPathUtils.h; path = src/FDPathUtils.h; sourceTree = "<group>"; };
 		151CDF360DE42F24004396B9 /* FDPathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDPathUtils.m; path = src/FDPathUtils.m; sourceTree = "<group>"; };
 		158D8E5D0DC6262D00521712 /* FDDMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDDMController.h; path = src/FDDMController.h; sourceTree = "<group>"; };
 		158D8E5E0DC6262D00521712 /* FDDMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDDMController.m; path = src/FDDMController.m; sourceTree = "<group>"; };
+		158E37E70EAE5AE900B28ECD /* FDProcessInfoReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDProcessInfoReader.h; path = src/FDProcessInfoReader.h; sourceTree = "<group>"; };
+		158E37E80EAE5AE900B28ECD /* FDProcessInfoReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDProcessInfoReader.m; path = src/FDProcessInfoReader.m; sourceTree = "<group>"; };
 		15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = DaemonMaster.icns; path = Resources/DaemonMaster.icns; sourceTree = "<group>"; };
 		15D63F410DC611B900DFEC40 /* FDLaunchJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLaunchJob.h; path = src/FDLaunchJob.h; sourceTree = "<group>"; };
 		15D63F420DC611B900DFEC40 /* FDLaunchJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLaunchJob.m; path = src/FDLaunchJob.m; sourceTree = "<group>"; };
@@ -34,6 +120,16 @@
 		15D63F590DC613C400DFEC40 /* FDLaunchctlWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLaunchctlWrapper.m; path = src/FDLaunchctlWrapper.m; sourceTree = "<group>"; };
 		15D63F620DC61AD400DFEC40 /* FDExceptionNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDExceptionNames.h; path = src/FDExceptionNames.h; sourceTree = "<group>"; };
 		15D63F630DC61AD400DFEC40 /* FDExceptionNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDExceptionNames.m; path = src/FDExceptionNames.m; sourceTree = "<group>"; };
+		15E7F6360EAE935A00D0D85D /* SSYAuthorizedTaskmaster+DaemonMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SSYAuthorizedTaskmaster+DaemonMaster.h"; path = "src/AuthorizedTasks/SSYAuthorizedTaskmaster+DaemonMaster.h"; sourceTree = SOURCE_ROOT; };
+		15E7F6370EAE935A00D0D85D /* SSYAuthorizedTaskmaster+DaemonMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SSYAuthorizedTaskmaster+DaemonMaster.m"; path = "src/AuthorizedTasks/SSYAuthorizedTaskmaster+DaemonMaster.m"; sourceTree = SOURCE_ROOT; };
+		15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AuthorizedTasks.xcodeproj; path = AuthorizedTasks/AuthorizedTasks.xcodeproj; sourceTree = "<group>"; };
+		15E7F68F0EAE961A00D0D85D /* FDDMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDDMAppDelegate.h; path = src/FDDMAppDelegate.h; sourceTree = "<group>"; };
+		15E7F6900EAE961A00D0D85D /* FDDMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDDMAppDelegate.m; path = src/FDDMAppDelegate.m; sourceTree = "<group>"; };
+		15E7F6920EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = AuthorizedTasks_DaemonMaster.c; path = AuthorizedTasks/AuthorizedTasks_DaemonMaster.c; sourceTree = SOURCE_ROOT; };
+		15E7F6930EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthorizedTasks_DaemonMaster.h; path = AuthorizedTasks/AuthorizedTasks_DaemonMaster.h; sourceTree = SOURCE_ROOT; };
+		15E7F6D10EAE99C100D0D85D /* AuthorizedTaskHelperToolInstaller */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = AuthorizedTaskHelperToolInstaller; path = AuthorizedTasks/build/Release/AuthorizedTaskHelperToolInstaller; sourceTree = "<group>"; };
+		15E7F7880EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = AuthorizedTaskHelperTool_DaemonMaster; path = AuthorizedTasks/build/Release/AuthorizedTaskHelperTool_DaemonMaster; sourceTree = "<group>"; };
+		15E7F87C0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSYAuthorizedTaskmaster.framework; path = AuthorizedTasks/build/Release/SSYAuthorizedTaskmaster.framework; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -49,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				151C842E0E2E8AAA00053C9B /* Security.framework in Frameworks */,
+				15E7F87D0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +156,19 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				15E7F6350EAE935A00D0D85D /* AuthorizedTasks */,
+				158E37E70EAE5AE900B28ECD /* FDProcessInfoReader.h */,
+				158E37E80EAE5AE900B28ECD /* FDProcessInfoReader.m */,
+				151C835A0E2E75A200053C9B /* FDAppListController.h */,
+				151C835B0E2E75A200053C9B /* FDAppListController.m */,
 				158D8E5D0DC6262D00521712 /* FDDMController.h */,
 				158D8E5E0DC6262D00521712 /* FDDMController.m */,
 				15D63F580DC613C400DFEC40 /* FDLaunchctlWrapper.h */,
 				15D63F590DC613C400DFEC40 /* FDLaunchctlWrapper.m */,
 				15D63F410DC611B900DFEC40 /* FDLaunchJob.h */,
 				15D63F420DC611B900DFEC40 /* FDLaunchJob.m */,
+				15E7F68F0EAE961A00D0D85D /* FDDMAppDelegate.h */,
+				15E7F6900EAE961A00D0D85D /* FDDMAppDelegate.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -71,6 +176,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15E7F87C0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework */,
+				151C842D0E2E8AAA00053C9B /* Security.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -86,9 +193,49 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
+		15E7F6350EAE935A00D0D85D /* AuthorizedTasks */ = {
+			isa = PBXGroup;
+			children = (
+				15E7F6920EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.c */,
+				15E7F6930EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.h */,
+				15E7F6360EAE935A00D0D85D /* SSYAuthorizedTaskmaster+DaemonMaster.h */,
+				15E7F6370EAE935A00D0D85D /* SSYAuthorizedTaskmaster+DaemonMaster.m */,
+			);
+			name = AuthorizedTasks;
+			path = src/AuthorizedTask;
+			sourceTree = "<group>";
+		};
+		15E7F6690EAE95AB00D0D85D /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		15E7F66C0EAE95B900D0D85D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15E7F6790EAE95B900D0D85D /* AuthorizedTaskHelperToolInstaller */,
+				15E7F67B0EAE95B900D0D85D /* SSYAuthorizedTaskmaster.framework */,
+				15E7F7850EAEA12A00D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15E7F6D00EAE99A600D0D85D /* AuthorizedTasks */ = {
+			isa = PBXGroup;
+			children = (
+				15E7F6D10EAE99C100D0D85D /* AuthorizedTaskHelperToolInstaller */,
+				15E7F7880EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */,
+			);
+			name = AuthorizedTasks;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				15E7F6D00EAE99A600D0D85D /* AuthorizedTasks */,
 				8D1107320486CEB800E47090 /* DaemonMaster.app */,
 			);
 			name = Products;
@@ -97,6 +244,7 @@
 		29B97314FDCFA39411CA2CEA /* DaemonMaster */ = {
 			isa = PBXGroup;
 			children = (
+				15E7F6690EAE95AB00D0D85D /* Projects */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -149,10 +297,15 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				15E7F66A0EAE95AC00D0D85D /* CopyFiles */,
+				15E7F6BD0EAE98FD00D0D85D /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				15E7F72D0EAE9F6600D0D85D /* PBXTargetDependency */,
+				15E7F78C0EAEA1C000D0D85D /* PBXTargetDependency */,
+				15E7F87F0EAEAFE500D0D85D /* PBXTargetDependency */,
 			);
 			name = DaemonMaster;
 			productInstallPath = "$(HOME)/Applications";
@@ -170,12 +323,42 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* DaemonMaster */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 15E7F66C0EAE95B900D0D85D /* Products */;
+					ProjectRef = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* DaemonMaster */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		15E7F6790EAE95B900D0D85D /* AuthorizedTaskHelperToolInstaller */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = AuthorizedTaskHelperToolInstaller;
+			remoteRef = 15E7F6780EAE95B900D0D85D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		15E7F67B0EAE95B900D0D85D /* SSYAuthorizedTaskmaster.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SSYAuthorizedTaskmaster.framework;
+			remoteRef = 15E7F67A0EAE95B900D0D85D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		15E7F7850EAEA12A00D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = AuthorizedTaskHelperTool_DaemonMaster;
+			remoteRef = 15E7F7840EAEA12A00D0D85D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -185,6 +368,8 @@
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				15CA28EB0DE36C9A001184D2 /* DaemonMaster.icns in Resources */,
+				15E7F6D30EAE99C100D0D85D /* AuthorizedTaskHelperToolInstaller in Resources */,
+				15E7F7890EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,10 +386,33 @@
 				15D63F640DC61AD400DFEC40 /* FDExceptionNames.m in Sources */,
 				158D8E5F0DC6262D00521712 /* FDDMController.m in Sources */,
 				151CDF370DE42F24004396B9 /* FDPathUtils.m in Sources */,
+				151C835C0E2E75A300053C9B /* FDAppListController.m in Sources */,
+				158E37E90EAE5AE900B28ECD /* FDProcessInfoReader.m in Sources */,
+				15E7F6380EAE935A00D0D85D /* SSYAuthorizedTaskmaster+DaemonMaster.m in Sources */,
+				15E7F6910EAE961A00D0D85D /* FDDMAppDelegate.m in Sources */,
+				15E7F6940EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15E7F72D0EAE9F6600D0D85D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AuthorizedTaskHelperToolInstaller;
+			targetProxy = 15E7F72C0EAE9F6600D0D85D /* PBXContainerItemProxy */;
+		};
+		15E7F78C0EAEA1C000D0D85D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AuthorizedTaskHelperTool_DaemonMaster;
+			targetProxy = 15E7F78B0EAEA1C000D0D85D /* PBXContainerItemProxy */;
+		};
+		15E7F87F0EAEAFE500D0D85D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SSYAuthorizedTaskmaster;
+			targetProxy = 15E7F87E0EAEAFE500D0D85D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -230,6 +438,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AuthorizedTasks/build/Debug\"",
+					"\"$(SRCROOT)/AuthorizedTasks/build/Release\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -248,6 +461,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AuthorizedTasks/build/Debug\"",
+					"\"$(SRCROOT)/AuthorizedTasks/build/Release\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DaemonMaster_Prefix.pch;
