@@ -6,6 +6,22 @@
 	objectVersion = 42;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		15405CDD0EB61C0A009A7FF3 /* All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 15405CEB0EB61C24009A7FF3 /* Build configuration list for PBXAggregateTarget "All" */;
+			buildPhases = (
+			);
+			dependencies = (
+				15405CE20EB61C11009A7FF3 /* PBXTargetDependency */,
+				15405CE40EB61C11009A7FF3 /* PBXTargetDependency */,
+				15405CE60EB61C11009A7FF3 /* PBXTargetDependency */,
+			);
+			name = All;
+			productName = All;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		15E7F76F0EAEA10C00D0D85D /* BetterAuthorizationSampleLib.c in Sources */ = {isa = PBXBuildFile; fileRef = 84D6DD960AD2F84F001E6F67 /* BetterAuthorizationSampleLib.c */; };
 		15E7F7710EAEA10C00D0D85D /* HelperToolMain.c in Sources */ = {isa = PBXBuildFile; fileRef = 48A782C70DB9492800B5F8B5 /* HelperToolMain.c */; };
@@ -23,6 +39,30 @@
 		48A77C240DB7E94600B5F8B5 /* SSYAuthorizedTaskmaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 4876D59C0DB3C1E500F46C64 /* SSYAuthorizedTaskmaster.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E449EC830B619E4B009E190A /* BetterAuthorizationSampleLibInstallTool.c in Sources */ = {isa = PBXBuildFile; fileRef = E449EC820B619E4B009E190A /* BetterAuthorizationSampleLibInstallTool.c */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15405CE10EB61C11009A7FF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E449EC630B619E02009E190A;
+			remoteInfo = AuthorizedTaskHelperToolInstaller;
+		};
+		15405CE30EB61C11009A7FF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48A77B4C0DB7DEB800B5F8B5;
+			remoteInfo = SSYAuthorizedTaskmaster;
+		};
+		15405CE50EB61C11009A7FF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15E7F76D0EAEA10C00D0D85D;
+			remoteInfo = AuthorizedTaskHelperTool_DaemonMaster;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
@@ -272,6 +312,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				15405CDD0EB61C0A009A7FF3 /* All */,
 				E449EC630B619E02009E190A /* AuthorizedTaskHelperToolInstaller */,
 				48A77B4C0DB7DEB800B5F8B5 /* SSYAuthorizedTaskmaster */,
 				15E7F76D0EAEA10C00D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */,
@@ -323,19 +364,65 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		15405CE20EB61C11009A7FF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E449EC630B619E02009E190A /* AuthorizedTaskHelperToolInstaller */;
+			targetProxy = 15405CE10EB61C11009A7FF3 /* PBXContainerItemProxy */;
+		};
+		15405CE40EB61C11009A7FF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48A77B4C0DB7DEB800B5F8B5 /* SSYAuthorizedTaskmaster */;
+			targetProxy = 15405CE30EB61C11009A7FF3 /* PBXContainerItemProxy */;
+		};
+		15405CE60EB61C11009A7FF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15E7F76D0EAEA10C00D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */;
+			targetProxy = 15405CE50EB61C11009A7FF3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		15405CDE0EB61C0A009A7FF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = All;
+			};
+			name = Debug;
+		};
+		15405CDF0EB61C0A009A7FF3 /* Debug64 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = All;
+			};
+			name = Debug64;
+		};
+		15405CE00EB61C0A009A7FF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = All;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		15E7F77E0EAEA10C00D0D85D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
-				PRODUCT_NAME = AuthorizedTaskHelperTool_Demo;
+				PRODUCT_NAME = AuthorizedTaskHelperTool_DaemonMaster;
 			};
 			name = Debug;
 		};
 		15E7F77F0EAEA10C00D0D85D /* Debug64 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = AuthorizedTaskHelperTool_Demo;
+				PRODUCT_NAME = AuthorizedTaskHelperTool_DaemonMaster;
 			};
 			name = Debug64;
 		};
@@ -521,6 +608,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		15405CEB0EB61C24009A7FF3 /* Build configuration list for PBXAggregateTarget "All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15405CDE0EB61C0A009A7FF3 /* Debug */,
+				15405CDF0EB61C0A009A7FF3 /* Debug64 */,
+				15405CE00EB61C0A009A7FF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		15E7F77D0EAEA10C00D0D85D /* Build configuration list for PBXNativeTarget "AuthorizedTaskHelperTool_DaemonMaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
