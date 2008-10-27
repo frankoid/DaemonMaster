@@ -7,12 +7,29 @@
 //
 
 #import "FDDMController.h"
+
+#import "FDProcessListController.h"
 #import "FDAppListController.h"
 #import "FDLaunchJobsController.h"
 
 @implementation FDDMController
 
+//-- Methods ------------------------------------------------------------------
+- (void)awakeFromNib
+{
+    [self showProcessListWindow:self];
+}
+
 //-- Actions ------------------------------------------------------------------
+
+- (IBAction)showProcessListWindow:(id)sender
+{
+    if (!processListController)
+    {
+        processListController = [[FDProcessListController alloc] init];
+    }
+    [processListController showWindow:self];
+}
 
 - (IBAction)showAppListWindow:(id)sender
 {

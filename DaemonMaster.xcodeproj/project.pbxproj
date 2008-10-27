@@ -10,6 +10,8 @@
 		151C835C0E2E75A300053C9B /* FDAppListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151C835B0E2E75A200053C9B /* FDAppListController.m */; };
 		151C842E0E2E8AAA00053C9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151C842D0E2E8AAA00053C9B /* Security.framework */; };
 		151CDF370DE42F24004396B9 /* FDPathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CDF360DE42F24004396B9 /* FDPathUtils.m */; };
+		153C2B450EB66D2B000EBBFA /* FDProcessListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C2B440EB66D2B000EBBFA /* FDProcessListController.m */; };
+		153C2B5B0EB67277000EBBFA /* ProcessList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153C2B590EB67277000EBBFA /* ProcessList.xib */; };
 		15405C620EB617F4009A7FF3 /* AppList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15405C600EB617F4009A7FF3 /* AppList.xib */; };
 		15405C880EB619A1009A7FF3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15405C860EB619A1009A7FF3 /* MainMenu.xib */; };
 		15405D7E0EB63180009A7FF3 /* FDLaunchJobsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15405D7D0EB63180009A7FF3 /* FDLaunchJobsController.m */; };
@@ -112,6 +114,9 @@
 		151C842D0E2E8AAA00053C9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		151CDF350DE42F24004396B9 /* FDPathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDPathUtils.h; path = src/FDPathUtils.h; sourceTree = "<group>"; };
 		151CDF360DE42F24004396B9 /* FDPathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDPathUtils.m; path = src/FDPathUtils.m; sourceTree = "<group>"; };
+		153C2B430EB66D2B000EBBFA /* FDProcessListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDProcessListController.h; path = src/FDProcessListController.h; sourceTree = "<group>"; };
+		153C2B440EB66D2B000EBBFA /* FDProcessListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDProcessListController.m; path = src/FDProcessListController.m; sourceTree = "<group>"; };
+		153C2B5A0EB67277000EBBFA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ProcessList.xib; sourceTree = "<group>"; };
 		15405C610EB617F4009A7FF3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AppList.xib; sourceTree = "<group>"; };
 		15405C870EB619A1009A7FF3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		15405D7C0EB63180009A7FF3 /* FDLaunchJobsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLaunchJobsController.h; path = src/FDLaunchJobsController.h; sourceTree = "<group>"; };
@@ -164,20 +169,22 @@
 			isa = PBXGroup;
 			children = (
 				15E7F6350EAE935A00D0D85D /* AuthorizedTasks */,
-				158E37E70EAE5AE900B28ECD /* FDProcessInfoReader.h */,
-				158E37E80EAE5AE900B28ECD /* FDProcessInfoReader.m */,
 				151C835A0E2E75A200053C9B /* FDAppListController.h */,
 				151C835B0E2E75A200053C9B /* FDAppListController.m */,
+				15E7F68F0EAE961A00D0D85D /* FDDMAppDelegate.h */,
+				15E7F6900EAE961A00D0D85D /* FDDMAppDelegate.m */,
 				158D8E5D0DC6262D00521712 /* FDDMController.h */,
 				158D8E5E0DC6262D00521712 /* FDDMController.m */,
 				15D63F580DC613C400DFEC40 /* FDLaunchctlWrapper.h */,
 				15D63F590DC613C400DFEC40 /* FDLaunchctlWrapper.m */,
 				15D63F410DC611B900DFEC40 /* FDLaunchJob.h */,
 				15D63F420DC611B900DFEC40 /* FDLaunchJob.m */,
-				15E7F68F0EAE961A00D0D85D /* FDDMAppDelegate.h */,
-				15E7F6900EAE961A00D0D85D /* FDDMAppDelegate.m */,
 				15405D7C0EB63180009A7FF3 /* FDLaunchJobsController.h */,
 				15405D7D0EB63180009A7FF3 /* FDLaunchJobsController.m */,
+				158E37E70EAE5AE900B28ECD /* FDProcessInfoReader.h */,
+				158E37E80EAE5AE900B28ECD /* FDProcessInfoReader.m */,
+				153C2B430EB66D2B000EBBFA /* FDProcessListController.h */,
+				153C2B440EB66D2B000EBBFA /* FDProcessListController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -283,6 +290,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				15405C860EB619A1009A7FF3 /* MainMenu.xib */,
+				153C2B590EB67277000EBBFA /* ProcessList.xib */,
 				15405C600EB617F4009A7FF3 /* AppList.xib */,
 				15405D800EB633E3009A7FF3 /* LaunchJobs.xib */,
 			);
@@ -383,6 +391,7 @@
 				15405C620EB617F4009A7FF3 /* AppList.xib in Resources */,
 				15405C880EB619A1009A7FF3 /* MainMenu.xib in Resources */,
 				15405D820EB633E3009A7FF3 /* LaunchJobs.xib in Resources */,
+				153C2B5B0EB67277000EBBFA /* ProcessList.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +414,7 @@
 				15E7F6910EAE961A00D0D85D /* FDDMAppDelegate.m in Sources */,
 				15E7F6940EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.c in Sources */,
 				15405D7E0EB63180009A7FF3 /* FDLaunchJobsController.m in Sources */,
+				153C2B450EB66D2B000EBBFA /* FDProcessListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +445,14 @@
 				089C165DFE840E0CC02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		153C2B590EB67277000EBBFA /* ProcessList.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				153C2B5A0EB67277000EBBFA /* English */,
+			);
+			name = ProcessList.xib;
 			sourceTree = "<group>";
 		};
 		15405C600EB617F4009A7FF3 /* AppList.xib */ = {

@@ -27,14 +27,14 @@ extern void _LSCopyAllApplicationURLs(NSArray**);
     return self;
 }
 
-- (void)awakeFromNib
-{
-    NSLog(@"In FDAppListController awakeFromNib");
-}
+// - (void)awakeFromNib
+// {
+//     NSLog(@"In FDAppListController awakeFromNib");
+// }
 
 - (void)windowDidLoad
 {
-    NSLog(@"In FDAppListController windowDidLoad, %@", appListArrayController);
+//     NSLog(@"In FDAppListController windowDidLoad, %@", appListArrayController);
     [appListArrayController setContent:[self allAppsAsDicts]];
 }
 

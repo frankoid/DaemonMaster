@@ -8,20 +8,10 @@
 
 #import "FDDMAppDelegate.h"
 
-#import "SSYAuthorizedTaskmaster/SSYAuthorizedTaskmaster.h"
-#import "SSYAuthorizedTaskmaster+DaemonMaster.h"
-extern const BASCommandSpec kCommandSpecs[];
-
 @implementation FDDMAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)notification
-{
-    [[SSYAuthorizedTaskMaster sharedWorker] configureWithCommandSpecs:kCommandSpecs
-                                                       helperToolName:@"AuthorizedTaskHelperTool_DaemonMaster"
-                                                    installerToolName:nil    // Use default
-                                                      stringsFilename:nil    // Use default
-                                                     bundleIdentifier:nil] ; // Use default
-    
-}
+// - (void)applicationDidFinishLaunching:(NSNotification *)notification
+// {
+// }
 
 @end

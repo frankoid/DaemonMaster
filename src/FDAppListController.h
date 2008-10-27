@@ -14,8 +14,7 @@
 }
 
 - (id)init;
-
-// - (void)windowDidLoad;
+- (void)windowDidLoad;
 
 - (IBAction)dumpAllApps:(id)sender;
 

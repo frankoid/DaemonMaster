@@ -13,7 +13,7 @@
 
 }
 
-//- (NSArray *)processes;
-- (IBAction)dumpProcesses:(id)sender;
++ (void)initialize;
+- (NSArray *)processList;
 
 @end

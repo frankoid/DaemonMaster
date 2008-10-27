@@ -10,12 +10,17 @@
 
 @class FDAppListController;
 @class FDLaunchJobsController;
+@class FDProcessListController;
 
 @interface FDDMController : NSObject {
+	FDProcessListController *processListController;
     FDAppListController *appListController;
     FDLaunchJobsController *launchJobsController;
 }
 
+- (void)awakeFromNib;
+
+- (IBAction)showProcessListWindow:(id)sender;
 - (IBAction)showAppListWindow:(id)sender;
 - (IBAction)showLaunchJobsWindow:(id)sender;
 

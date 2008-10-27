@@ -67,11 +67,11 @@
     [refreshProgressIndicator stopAnimation:self];
 }
 
-- (void)taskDidFinish:(NSNotification *)notification
-{
-    NSTask *finishedTask = [notification object];
-    NSLog(@"task \"%@\" finished with status: %d. args = ", [finishedTask launchPath], [finishedTask terminationStatus], [finishedTask arguments]);
-}
+//- (void)taskDidFinish:(NSNotification *)notification
+//{
+//    NSTask *finishedTask = [notification object];
+//    NSLog(@"task \"%@\" finished with status: %d. args = ", [finishedTask launchPath], [finishedTask terminationStatus], [finishedTask arguments]);
+//}
 
 - (IBAction)load:(id)sender
 {
