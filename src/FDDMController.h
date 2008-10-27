@@ -9,31 +9,14 @@
 #import <Cocoa/Cocoa.h>
 
 @class FDAppListController;
+@class FDLaunchJobsController;
 
 @interface FDDMController : NSObject {
     FDAppListController *appListController;
-    
-	IBOutlet NSTableView *launchJobsView;
-	IBOutlet NSProgressIndicator *refreshProgressIndicator;
-	NSTimer *refreshTimer;
-	NSMutableArray *launchJobs;
-	
-	BOOL runAsRoot;
+    FDLaunchJobsController *launchJobsController;
 }
 
-- (IBAction)refresh:(id)sender;
-- (IBAction)load:(id)sender;
-- (IBAction)unload:(id)sender;
-
 - (IBAction)showAppListWindow:(id)sender;
-
-// Properties
-- (BOOL)runAsRoot;
-- (void)setRunAsRoot:(BOOL)newRunAsRoot;
-
-// NSTableView data source methods
-- (int)numberOfRowsInTableView:(NSTableView *)tableView;
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex;
-
+- (IBAction)showLaunchJobsWindow:(id)sender;
 
 @end

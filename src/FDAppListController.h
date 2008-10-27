@@ -10,13 +10,13 @@
 
 
 @interface FDAppListController : NSWindowController {
-	IBOutlet NSArrayController *appListArrayController;
+    IBOutlet NSArrayController *appListArrayController;
 }
 
 - (id)init;
 
-- (void)windowDidLoad;
+// - (void)windowDidLoad;
 
-- (void)dumpAllApps:(id)sender;
+- (IBAction)dumpAllApps:(id)sender;
 
 @end
