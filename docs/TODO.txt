@@ -1,1 +1,3 @@
 In the helper tool, use asl_set_filter to filter out DEBUG messages
+
+Code signing - see http://developer.apple.com/documentation/Security/Conceptual/CodeSigningGuide/

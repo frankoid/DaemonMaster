@@ -15,6 +15,12 @@ extern void _LSCopyAllApplicationURLs(NSArray**);
 
 @implementation FDAppListController
 
+- (id)init
+{
+    self = [super initWithWindowNibName:@"AppList"];
+    return self;
+}
+
 - (NSArray *)allAppURLs
 {
 	NSArray *allAppURLs;
@@ -111,7 +117,12 @@ static NSString *commaSeparatedStringFromArray(NSArray *array)
 
 - (void)awakeFromNib
 {
-	NSLog(@"In FDAppListController awakeFromNib, %@", appListArrayController);
+	NSLog(@"In FDAppListController awakeFromNib");
+}
+
+- (void)windowDidLoad
+{
+	NSLog(@"In FDAppListController windowDidLoad, %@", appListArrayController);
 	[appListArrayController setContent:[self allAppsAsDicts]];
 }
 

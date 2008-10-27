@@ -10,6 +10,8 @@
 		151C835C0E2E75A300053C9B /* FDAppListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151C835B0E2E75A200053C9B /* FDAppListController.m */; };
 		151C842E0E2E8AAA00053C9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151C842D0E2E8AAA00053C9B /* Security.framework */; };
 		151CDF370DE42F24004396B9 /* FDPathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CDF360DE42F24004396B9 /* FDPathUtils.m */; };
+		15405C620EB617F4009A7FF3 /* AppList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15405C600EB617F4009A7FF3 /* AppList.xib */; };
+		15405C880EB619A1009A7FF3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15405C860EB619A1009A7FF3 /* MainMenu.xib */; };
 		158D8E5F0DC6262D00521712 /* FDDMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 158D8E5E0DC6262D00521712 /* FDDMController.m */; };
 		158E37E90EAE5AE900B28ECD /* FDProcessInfoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 158E37E80EAE5AE900B28ECD /* FDProcessInfoReader.m */; };
 		15CA28EB0DE36C9A001184D2 /* DaemonMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = 15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */; };
@@ -25,7 +27,6 @@
 		15E7F78A0EAEA1B500D0D85D /* AuthorizedTaskHelperTool_DaemonMaster in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15E7F7880EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */; };
 		15E7F87D0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E7F87C0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework */; };
 		15E7F8860EAEB02500D0D85D /* SSYAuthorizedTaskmaster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15E7F87C0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework */; };
-		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -109,6 +110,8 @@
 		151C842D0E2E8AAA00053C9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		151CDF350DE42F24004396B9 /* FDPathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDPathUtils.h; path = src/FDPathUtils.h; sourceTree = "<group>"; };
 		151CDF360DE42F24004396B9 /* FDPathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDPathUtils.m; path = src/FDPathUtils.m; sourceTree = "<group>"; };
+		15405C610EB617F4009A7FF3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AppList.xib; sourceTree = "<group>"; };
+		15405C870EB619A1009A7FF3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		158D8E5D0DC6262D00521712 /* FDDMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDDMController.h; path = src/FDDMController.h; sourceTree = "<group>"; };
 		158D8E5E0DC6262D00521712 /* FDDMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDDMController.m; path = src/FDDMController.m; sourceTree = "<group>"; };
 		158E37E70EAE5AE900B28ECD /* FDProcessInfoReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDProcessInfoReader.h; path = src/FDProcessInfoReader.h; sourceTree = "<group>"; };
@@ -131,7 +134,6 @@
 		15E7F7880EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = AuthorizedTaskHelperTool_DaemonMaster; path = AuthorizedTasks/build/Release/AuthorizedTaskHelperTool_DaemonMaster; sourceTree = "<group>"; };
 		15E7F87C0EAEAFBD00D0D85D /* SSYAuthorizedTaskmaster.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSYAuthorizedTaskmaster.framework; path = AuthorizedTasks/build/Release/SSYAuthorizedTaskmaster.framework; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* DaemonMaster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaemonMaster_Prefix.pch; sourceTree = "<group>"; };
@@ -273,7 +275,8 @@
 				15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				15405C860EB619A1009A7FF3 /* MainMenu.xib */,
+				15405C600EB617F4009A7FF3 /* AppList.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -365,11 +368,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				15CA28EB0DE36C9A001184D2 /* DaemonMaster.icns in Resources */,
 				15E7F6D30EAE99C100D0D85D /* AuthorizedTaskHelperToolInstaller in Resources */,
 				15E7F7890EAEA1A300D0D85D /* AuthorizedTaskHelperTool_DaemonMaster in Resources */,
+				15405C620EB617F4009A7FF3 /* AppList.xib in Resources */,
+				15405C880EB619A1009A7FF3 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,12 +427,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+		15405C600EB617F4009A7FF3 /* AppList.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				29B97319FDCFA39411CA2CEA /* English */,
+				15405C610EB617F4009A7FF3 /* English */,
 			);
-			name = MainMenu.nib;
+			name = AppList.xib;
+			sourceTree = "<group>";
+		};
+		15405C860EB619A1009A7FF3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15405C870EB619A1009A7FF3 /* English */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

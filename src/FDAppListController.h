@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface FDAppListController : NSObject {
+@interface FDAppListController : NSWindowController {
 	IBOutlet NSArrayController *appListArrayController;
 }
 
-- (void)awakeFromNib;
+- (id)init;
+
+- (void)windowDidLoad;
 
 - (void)dumpAllApps:(id)sender;
 

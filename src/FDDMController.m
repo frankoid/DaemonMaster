@@ -9,6 +9,7 @@
 #import "FDDMController.h"
 #import "FDLaunchctlWrapper.h"
 #import "FDLaunchJob.h"
+#import "FDAppListController.h"
 
 @implementation FDDMController
 
@@ -82,7 +83,16 @@
     }
 }
 
-//-- Actions ------------------------------------------------------------------
+- (IBAction)showAppListWindow:(id)sender
+{
+    if (!appListController)
+    {
+        appListController = [[FDAppListController alloc] init];
+    }
+    [appListController showWindow:self];
+}
+
+//-----------------------------------------------------------------------------
 
 - (BOOL)runAsRoot
 {

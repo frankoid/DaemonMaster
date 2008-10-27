@@ -8,7 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class FDAppListController;
+
 @interface FDDMController : NSObject {
+    FDAppListController *appListController;
+    
 	IBOutlet NSTableView *launchJobsView;
 	IBOutlet NSProgressIndicator *refreshProgressIndicator;
 	NSTimer *refreshTimer;
@@ -20,6 +24,8 @@
 - (IBAction)refresh:(id)sender;
 - (IBAction)load:(id)sender;
 - (IBAction)unload:(id)sender;
+
+- (IBAction)showAppListWindow:(id)sender;
 
 // Properties
 - (BOOL)runAsRoot;
