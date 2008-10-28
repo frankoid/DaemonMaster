@@ -54,4 +54,5 @@ OSStatus DoGetProcessList(COMMAND_PROC_ARGUMENTS);
 #define kFDDMHelperVersion  "helperVersion"     // CFNumber
 #define kFDDMProcesses      "processes"         // CFArray
 #define kFDDMPID            "pid"               // CFNumber
+#define kFDDMCommand        "command"           // CFString
 #define kFDDMArgs           "args"              // CFArray of CFStrings process's

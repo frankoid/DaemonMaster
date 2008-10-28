@@ -217,6 +217,7 @@ OSStatus DoGetProcessList(COMMAND_PROC_ARGUMENTS) {
     CFMutableArrayRef processes = NULL;
     CFMutableDictionaryRef processInfoDict = NULL;
     CFNumberRef cfPid = NULL;
+    CFStringRef command = NULL;
     CFMutableArrayRef args = NULL;
 
     // Pre-conditions
@@ -297,8 +298,14 @@ OSStatus DoGetProcessList(COMMAND_PROC_ARGUMENTS) {
         CFRelease(cfPid);
         cfPid = NULL;
 
-        if (CreateArgArrayForProcess(&kps[entry], &args)) goto EXIT;
+        // add the command name to processInfoDict
+        command = CFStringCreateWithCString(NULL, kps[entry].kp_proc.p_comm, kCFStringEncodingUTF8);
+        CFDictionaryAddValue(processInfoDict, CFSTR(kFDDMCommand), command);
+        CFRelease(command);
+        command = NULL;
+        
         // add the args to processInfoDict
+        if (CreateArgArrayForProcess(&kps[entry], &args)) goto EXIT;
         CFDictionaryAddValue(processInfoDict, CFSTR(kFDDMArgs), args);
         CFRelease(args);
         args = NULL;
@@ -328,6 +335,10 @@ EXIT:
     if (cfPid != NULL)
     {
         CFRelease(cfPid);
+    }
+    if (command != NULL)
+    {
+        CFRelease(command);
     }
     if (args != NULL)
     {
