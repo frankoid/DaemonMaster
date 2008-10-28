@@ -50,22 +50,24 @@
 // Needed for sleep()
 #include <unistd.h>
 
+static aslclient sAsl = NULL;
+static aslmsg sAslMsg = NULL;
+
 /*
- * Get command and arguments.
+ * Get a process's argv as a CFArray.
  *
- * on return argvlen is the length of the extracted string, argv0len is
- * the length of the command (same as argvlen if show_args is true)
+ * argv is implicitly retained by the caller (i.e. the caller must CFRelease
+ * it).
  *
- * Based on code from ps.tproj/print.c
+ * Based on getproclline from ps.tproj/print.c
  */
-static void
-getproclline(const struct kinfo_proc *kp, char **command_name, int *argvlen, int *argv0len,
-  int show_args)
+static OSStatus
+CreateArgArrayForProcess(const struct kinfo_proc *kp, CFMutableArrayRef *argsp)
 {
-    int     mib[3], argmax, nargs, c = 0;
-    size_t      size;
-    char        *procargs, *sp, *np, *cp;
-//    extern int  eflg;
+    OSStatus retval = noErr;
+    int      mib[3], argmax, nargs, c = 0;
+    size_t   size;
+    char     *procargs, *np, *cp;
 
     /* Get the maximum process arguments size. */
     mib[0] = CTL_KERN;
@@ -73,13 +75,14 @@ getproclline(const struct kinfo_proc *kp, char **command_name, int *argvlen, int
 
     size = sizeof(argmax);
     if (sysctl(mib, 2, &argmax, &size, NULL, 0) == -1) {
-        goto ERROR_A;
+        asl_log(sAsl, sAslMsg, ASL_LEVEL_ERR, "KERN_ARGMAX sysctl failed: %m");
+        goto ERROR_A_COMM;
     }
 
     /* Allocate space for the arguments. */
     procargs = (char *)malloc(argmax);
     if (procargs == NULL) {
-        goto ERROR_A;
+        goto ERROR_A_COMM;
     }
 
     /*
@@ -126,10 +129,10 @@ getproclline(const struct kinfo_proc *kp, char **command_name, int *argvlen, int
     mib[0] = CTL_KERN;
     mib[1] = KERN_PROCARGS2;
     mib[2] = kp->kp_proc.p_pid;
-
+    
     size = (size_t)argmax;
     if (sysctl(mib, 3, procargs, &size, NULL, 0) == -1) {
-        goto ERROR_B;
+        goto ERROR_B_COMM;
     }
 
     memcpy(&nargs, procargs, sizeof(nargs));
@@ -143,7 +146,7 @@ getproclline(const struct kinfo_proc *kp, char **command_name, int *argvlen, int
         }
     }
     if (cp == &procargs[size]) {
-        goto ERROR_B;
+        goto ERROR_B_COMM;
     }
 
     /* Skip trailing '\0' characters. */
@@ -154,93 +157,56 @@ getproclline(const struct kinfo_proc *kp, char **command_name, int *argvlen, int
         }
     }
     if (cp == &procargs[size]) {
-        goto ERROR_B;
+        goto ERROR_B_COMM;
     }
-    /* Save where the argv[0] string starts. */
-    sp = cp;
+
+    if ((retval = CFQArrayCreateMutable(argsp)) != noErr) goto ERROR_B;
 
     /*
-     * Iterate through the '\0'-terminated strings and convert '\0' to ' '
-     * until a string is found that has a '=' character in it (or there are
-     * no more strings in procargs).  There is no way to deterministically
-     * know where the command arguments end and the environment strings
-     * start, which is why the '=' character is searched for as a heuristic.
+     * Iterate through the '\0'-terminated strings until desired number of
+     * args is reached or the end of procargs is reached.
      */
-    for (np = NULL; c < nargs && cp < &procargs[size]; cp++) {
+    for (np = cp - 1; c < nargs && cp < &procargs[size]; cp++) {
         if (*cp == '\0') {
+            CFStringRef arg;
             c++;
-            if (np != NULL) {
-                /* Convert previous '\0'. */
-                *np = ' ';
-            } else {
-                *argv0len = cp - sp;
+            /* Get previous arg */
+            arg = CFStringCreateWithCString(NULL, np + 1, kCFStringEncodingUTF8);
+            if (!arg)
+            {
+                retval = coreFoundationUnknownErr;
+                goto ERROR_C_COMM;
             }
+            CFArrayAppendValue(*argsp, arg);
+            CFRelease(arg);
+
             /* Note location of current '\0'. */
             np = cp;
-
-            if (!show_args) {
-                /*
-                 * Don't convert '\0' characters to ' '.
-                 * However, we needed to know that the
-                 * command name was terminated, which we
-                 * now know.
-                 */
-                break;
-            }
         }
     }
 
-#if 0
-    /*
-     * If eflg is non-zero, continue converting '\0' characters to ' '
-     * characters until no more strings that look like environment settings
-     * follow.
-     */
-    if ( show_args && (eflg != 0) && ( (getuid() == 0) || (KI_EPROC(k)->e_pcred.p_ruid == getuid()) ) ) {
-        for (; cp < &procargs[size]; cp++) {
-            if (*cp == '\0') {
-                if (np != NULL) {
-                    if (&np[1] == cp) {
-                        /*
-                         * Two '\0' characters in a row.
-                         * This should normally only
-                         * happen after all the strings
-                         * have been seen, but in any
-                         * case, stop parsing.
-                         */
-                        break;
-                    }
-                    /* Convert previous '\0'. */
-                    *np = ' ';
-                }
-                /* Note location of current '\0'. */
-                np = cp;
-            }
-        }
-    }
-#endif
-        
-    /*
-     * sp points to the beginning of the arguments/environment string, and
-     * np should point to the '\0' terminator for the string.
-     */
-    if (np == NULL || np == sp) {
-        /* Empty or unterminated string. */
-        goto ERROR_B;
-    }
-
-    /* Make a copy of the string. */
-    *argvlen = asprintf(command_name, "%s", sp);
-
-    /* Clean up. */
+  ERROR_B:
     free(procargs);
-    return;
+//  ERROR_A:
+    return retval;
 
-    ERROR_B:
+  ERROR_C_COMM:
+    CFRelease(*argsp);
+    *argsp = NULL;
+  ERROR_B_COMM:
     free(procargs);
-    ERROR_A:
-    *argv0len = *argvlen 
-      = asprintf(command_name, "(%s)", kp->kp_proc.p_comm);
+  ERROR_A_COMM:
+    /* Getting all the args failed. Fall back to getting just the command
+     * from the kerninfo_proc. */
+    retval = noErr;
+    if ((retval = CFQArrayCreateMutable(argsp)) != noErr) goto ERROR_X;
+    CFStringRef command = CFStringCreateWithFormat(NULL, NULL, CFSTR("(%s)"), kp->kp_proc.p_comm);
+    CFArrayAppendValue(*argsp, command);
+    CFRelease(command);
+    
+  ERROR_X:
+/*     if (retval) asl_log(sAsl, sAslMsg, ASL_LEVEL_ERR, "Error in CreateArgArrayForProcess %d: %m", retval); */
+    return retval;
 }
 
 
@@ -251,36 +217,31 @@ OSStatus DoGetProcessList(COMMAND_PROC_ARGUMENTS) {
     CFMutableArrayRef processes = NULL;
     CFMutableDictionaryRef processInfoDict = NULL;
     CFNumberRef cfPid = NULL;
-    CFStringRef cfCommand = NULL;
+    CFMutableArrayRef args = NULL;
 
     // Pre-conditions
-    
+
     // userData may be NULL
     assert(request != NULL);
     assert(response != NULL);
     // asl may be NULL
     // aslMsg may be NULL
 
+    sAsl = asl;
+    sAslMsg = aslMsg;
+
     // Get the process list
     int mib[4] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL, 0 };
-//     int what = KERN_PROC_ALL;
-//     int flag = 0;
     struct kinfo_proc *kps = NULL;
     int nentries = -1;
     size_t bufSize = 0;
     size_t orig_bufSize;
     int retry_count = 0;
     int local_error = 0;
-//     mib[0] = CTL_KERN;
-//     mib[1] = KERN_PROC;
-//     mib[2] = what;
-//     mib[3] = flag;
-
-    char *command = NULL;
 
     if (sysctl(mib, 4, NULL, &bufSize, NULL, 0) < 0)
     {
-        perror("Failure calling sysctl");
+        asl_log(asl, aslMsg, ASL_LEVEL_ERR, "KERN_PROC sysctl failed: %m");
         retval = coreFoundationUnknownErr;
         goto EXIT;
     }
@@ -288,7 +249,7 @@ OSStatus DoGetProcessList(COMMAND_PROC_ARGUMENTS) {
     kps = (struct kinfo_proc *)malloc(bufSize);
     if (kps == 0)
     {
-        perror("malloc failed");
+        asl_log(asl, aslMsg, ASL_LEVEL_ERR, "malloc failed: %m");
         retval = coreFoundationUnknownErr;
         goto EXIT;
     }
@@ -300,35 +261,31 @@ OSStatus DoGetProcessList(COMMAND_PROC_ARGUMENTS) {
         local_error = 0;
         bufSize = orig_bufSize;
         if ((local_error = sysctl(mib, 4, kps, &bufSize, NULL, 0)) < 0) {
-            if (retry_count < 1000) {
+            if (retry_count < 10) {
                 /* 1 sec back off */
                 sleep(1);
                 continue;
             }
-            perror("Failure calling sysctl");
+            asl_log(asl, aslMsg, ASL_LEVEL_ERR, "KERN_PROC sysctl failed despite retries: %m");
+            retval = coreFoundationUnknownErr;
             goto EXIT;
         } else if (local_error == 0) {
             break;
         }
     }
-    
+
     /* This has to be after the second sysctl since the bufSize
      may have changed.  */
     nentries = bufSize / sizeof(struct kinfo_proc);
 
-        
+
     if ((retval = CFQArrayCreateMutable(&processes)) != noErr) goto EXIT;
 
     int entry;
-/*     NSLog(@"bufSize = %d, nentries = %d", bufSize, nentries); */
     for (entry = 0; entry < nentries; entry++)
     {
-        int argvlen;
-        int argv0len;
-        getproclline(&kps[entry], &command, &argvlen, &argv0len, 1);
-
         if ((retval = CFQDictionaryCreateMutable(&processInfoDict)) != noErr) goto EXIT;
-    
+
         // add the PID to processInfoDict
         cfPid = CFNumberCreate(NULL, kCFNumberIntType, &(kps[entry].kp_proc.p_pid));
         if (!cfPid)
@@ -339,45 +296,26 @@ OSStatus DoGetProcessList(COMMAND_PROC_ARGUMENTS) {
         CFDictionaryAddValue(processInfoDict, CFSTR(kFDDMPID), cfPid);
         CFRelease(cfPid);
         cfPid = NULL;
-    
-        // add the command to processInfoDict
-        cfCommand = CFStringCreateWithCString(NULL, command, kCFStringEncodingUTF8);
-        if (!cfCommand)
-        {
-            retval = coreFoundationUnknownErr;
-            goto EXIT;
-        }
-        CFDictionaryAddValue(processInfoDict, CFSTR(kFDDMCommand), cfCommand);
-        CFRelease(cfCommand);
-        cfCommand = NULL;
-    
+
+        if (CreateArgArrayForProcess(&kps[entry], &args)) goto EXIT;
+        // add the args to processInfoDict
+        CFDictionaryAddValue(processInfoDict, CFSTR(kFDDMArgs), args);
+        CFRelease(args);
+        args = NULL;
+
         // add processInfoDict to the processes array
         CFArrayAppendValue(processes, processInfoDict);
-    
+
         CFRelease(processInfoDict);
         processInfoDict = NULL;
-
-        free(command);
-        command = NULL;
     }
-    
-        
-    // Add the data to the response
 
-    // for each process {
-    
-    // } end for each process
-    
     CFDictionaryAddValue(response, CFSTR(kFDDMProcesses), processes);
-    
+
 EXIT:
     if (kps != NULL)
     {
         free(kps);
-    }
-    if (command != NULL)
-    {
-        free(command);
     }
     if (processes != NULL)
     {
@@ -391,10 +329,14 @@ EXIT:
     {
         CFRelease(cfPid);
     }
-    if (cfCommand != NULL)
+    if (args != NULL)
     {
-        CFRelease(cfCommand);
+        CFRelease(args);
     }
-    
+
+    if (retval)
+    {
+        asl_log(asl, aslMsg, ASL_LEVEL_ERR, "DoGetProcessList returning error %d: %m", retval);
+    }
     return retval;
-}   
+}

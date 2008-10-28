@@ -7,8 +7,14 @@
 //
 
 #import "FDDMAppDelegate.h"
+#import "FDArrayToSpaceSeparatedStringTransformer.h"
 
 @implementation FDDMAppDelegate
+
++ (void)initialize
+{
+    [FDArrayToSpaceSeparatedStringTransformer registerTransformer];
+}
 
 // - (void)applicationDidFinishLaunching:(NSNotification *)notification
 // {

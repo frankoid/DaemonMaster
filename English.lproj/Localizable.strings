@@ -1,0 +1,5 @@
+/* Note that all of the strings end in a space.  That is because, although two spaces should follow a period-ending sentence, the system will append a string beginning with one space.  " MyApp.app requires that you type your password."*/
+
+"adminMustHaveGenericPrompt" = "You must supply an adminstrator credential to perform this action. ";
+
+"getProcessListPrompt" = "You must be authorized to view the process list. ";

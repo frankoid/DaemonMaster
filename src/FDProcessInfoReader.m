@@ -39,10 +39,7 @@ extern const BASCommandSpec kCommandSpecs[];
         NSLog(@"getProcessList error: %@", [error localizedDescription]);
         return nil;
     }
-    else
-    {
-        return processList;
-    }
+    return processList;
 }
 
 @end

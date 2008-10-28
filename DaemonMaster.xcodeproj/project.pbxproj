@@ -18,6 +18,8 @@
 		15405D820EB633E3009A7FF3 /* LaunchJobs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15405D800EB633E3009A7FF3 /* LaunchJobs.xib */; };
 		158D8E5F0DC6262D00521712 /* FDDMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 158D8E5E0DC6262D00521712 /* FDDMController.m */; };
 		158E37E90EAE5AE900B28ECD /* FDProcessInfoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 158E37E80EAE5AE900B28ECD /* FDProcessInfoReader.m */; };
+		15A1FBF50EB7B200000AA708 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15A1FBF30EB7B200000AA708 /* Localizable.strings */; };
+		15A1FE750EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A1FE730EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.m */; };
 		15CA28EB0DE36C9A001184D2 /* DaemonMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = 15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */; };
 		15D63F430DC611B900DFEC40 /* FDLaunchJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F420DC611B900DFEC40 /* FDLaunchJob.m */; };
 		15D63F5A0DC613C400DFEC40 /* FDLaunchctlWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D63F590DC613C400DFEC40 /* FDLaunchctlWrapper.m */; };
@@ -37,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		15A1FCC40EB7C101000AA708 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 15A1FCB60EB7C0D4000AA708;
+			remoteInfo = TestHarnessGetProcList;
+		};
 		15E7F6780EAE95B900D0D85D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 15E7F66B0EAE95B900D0D85D /* AuthorizedTasks.xcodeproj */;
@@ -126,6 +135,9 @@
 		158D8E5E0DC6262D00521712 /* FDDMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDDMController.m; path = src/FDDMController.m; sourceTree = "<group>"; };
 		158E37E70EAE5AE900B28ECD /* FDProcessInfoReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDProcessInfoReader.h; path = src/FDProcessInfoReader.h; sourceTree = "<group>"; };
 		158E37E80EAE5AE900B28ECD /* FDProcessInfoReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDProcessInfoReader.m; path = src/FDProcessInfoReader.m; sourceTree = "<group>"; };
+		15A1FBF40EB7B200000AA708 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15A1FE730EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDArrayToSpaceSeparatedStringTransformer.m; path = src/ValueTransformers/FDArrayToSpaceSeparatedStringTransformer.m; sourceTree = "<group>"; };
+		15A1FE740EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDArrayToSpaceSeparatedStringTransformer.h; path = src/ValueTransformers/FDArrayToSpaceSeparatedStringTransformer.h; sourceTree = "<group>"; };
 		15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = DaemonMaster.icns; path = Resources/DaemonMaster.icns; sourceTree = "<group>"; };
 		15D63F410DC611B900DFEC40 /* FDLaunchJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLaunchJob.h; path = src/FDLaunchJob.h; sourceTree = "<group>"; };
 		15D63F420DC611B900DFEC40 /* FDLaunchJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLaunchJob.m; path = src/FDLaunchJob.m; sourceTree = "<group>"; };
@@ -168,6 +180,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				15A1FE340EB7C91B000AA708 /* ValueTransformers */,
 				15E7F6350EAE935A00D0D85D /* AuthorizedTasks */,
 				151C835A0E2E75A200053C9B /* FDAppListController.h */,
 				151C835B0E2E75A200053C9B /* FDAppListController.m */,
@@ -209,6 +222,15 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
+		15A1FE340EB7C91B000AA708 /* ValueTransformers */ = {
+			isa = PBXGroup;
+			children = (
+				15A1FE730EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.m */,
+				15A1FE740EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.h */,
+			);
+			name = ValueTransformers;
+			sourceTree = "<group>";
+		};
 		15E7F6350EAE935A00D0D85D /* AuthorizedTasks */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +257,7 @@
 				15E7F6790EAE95B900D0D85D /* AuthorizedTaskHelperToolInstaller */,
 				15E7F67B0EAE95B900D0D85D /* SSYAuthorizedTaskmaster.framework */,
 				15E7F7850EAEA12A00D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */,
+				15A1FCC50EB7C101000AA708 /* TestHarnessGetProcList */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,6 +309,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				15A1FBF30EB7B200000AA708 /* Localizable.strings */,
 				15CA28EA0DE36C9A001184D2 /* DaemonMaster.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -356,6 +380,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		15A1FCC50EB7C101000AA708 /* TestHarnessGetProcList */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = TestHarnessGetProcList;
+			remoteRef = 15A1FCC40EB7C101000AA708 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		15E7F6790EAE95B900D0D85D /* AuthorizedTaskHelperToolInstaller */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -392,6 +423,7 @@
 				15405C880EB619A1009A7FF3 /* MainMenu.xib in Resources */,
 				15405D820EB633E3009A7FF3 /* LaunchJobs.xib in Resources */,
 				153C2B5B0EB67277000EBBFA /* ProcessList.xib in Resources */,
+				15A1FBF50EB7B200000AA708 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +447,7 @@
 				15E7F6940EAE96BC00D0D85D /* AuthorizedTasks_DaemonMaster.c in Sources */,
 				15405D7E0EB63180009A7FF3 /* FDLaunchJobsController.m in Sources */,
 				153C2B450EB66D2B000EBBFA /* FDProcessListController.m in Sources */,
+				15A1FE750EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +510,14 @@
 				15405D810EB633E3009A7FF3 /* English */,
 			);
 			name = LaunchJobs.xib;
+			sourceTree = "<group>";
+		};
+		15A1FBF30EB7B200000AA708 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15A1FBF40EB7B200000AA708 /* English */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

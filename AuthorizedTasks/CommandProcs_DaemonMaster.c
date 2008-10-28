@@ -10,6 +10,7 @@
  The array must end with a NULL termination sentinel.
 */
 const BASCommandProc kCommandProcs[] = {
+    DoGetHelperVersion,
     DoGetProcessList,
     NULL  // array-termination sentinel
 } ;

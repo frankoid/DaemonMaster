@@ -13,6 +13,8 @@
 
 }
 
++ (void)initialize;
+
 // - (void)applicationDidFinishLaunching:(NSNotification *)notification;
 
 @end

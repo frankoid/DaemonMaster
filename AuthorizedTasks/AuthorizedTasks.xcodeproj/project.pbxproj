@@ -16,6 +16,7 @@
 				15405CE20EB61C11009A7FF3 /* PBXTargetDependency */,
 				15405CE40EB61C11009A7FF3 /* PBXTargetDependency */,
 				15405CE60EB61C11009A7FF3 /* PBXTargetDependency */,
+				15A1FDE60EB7C11F000AA708 /* PBXTargetDependency */,
 			);
 			name = All;
 			productName = All;
@@ -23,6 +24,17 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		15A1FC1A0EB7B4BF000AA708 /* HelperToolTaskDoGetHelperVersion.c in Sources */ = {isa = PBXBuildFile; fileRef = 15A1FC190EB7B4BF000AA708 /* HelperToolTaskDoGetHelperVersion.c */; };
+		15A1FCBB0EB7C0ED000AA708 /* AuthorizedTasks_DaemonMaster.c in Sources */ = {isa = PBXBuildFile; fileRef = 15E7F5D90EAE889200D0D85D /* AuthorizedTasks_DaemonMaster.c */; };
+		15A1FCBC0EB7C0ED000AA708 /* CommandProcs_DaemonMaster.c in Sources */ = {isa = PBXBuildFile; fileRef = 15E7F5DB0EAE889200D0D85D /* CommandProcs_DaemonMaster.c */; };
+		15A1FCBD0EB7C0ED000AA708 /* BetterAuthorizationSampleLib.c in Sources */ = {isa = PBXBuildFile; fileRef = 84D6DD960AD2F84F001E6F67 /* BetterAuthorizationSampleLib.c */; };
+		15A1FCBF0EB7C0ED000AA708 /* HelperToolTaskDoGetProcessList.c in Sources */ = {isa = PBXBuildFile; fileRef = 15E7F5E40EAE8C2200D0D85D /* HelperToolTaskDoGetProcessList.c */; };
+		15A1FCC00EB7C0ED000AA708 /* MoreCFQ.c in Sources */ = {isa = PBXBuildFile; fileRef = 48EBCDB30DC95933002698DA /* MoreCFQ.c */; };
+		15A1FCC10EB7C0ED000AA708 /* HelperToolTaskDoGetHelperVersion.c in Sources */ = {isa = PBXBuildFile; fileRef = 15A1FC190EB7B4BF000AA708 /* HelperToolTaskDoGetHelperVersion.c */; };
+		15A1FCC20EB7C0ED000AA708 /* TestHarnessGetProcessList.c in Sources */ = {isa = PBXBuildFile; fileRef = 15A1FCAF0EB7BF2A000AA708 /* TestHarnessGetProcessList.c */; };
+		15A1FDDF0EB7C105000AA708 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */; };
+		15A1FDE00EB7C105000AA708 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D6DDDB0AD302A2001E6F67 /* Security.framework */; };
+		15A1FDE10EB7C105000AA708 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48501E470DB552C4007D68DC /* CoreServices.framework */; };
 		15E7F76F0EAEA10C00D0D85D /* BetterAuthorizationSampleLib.c in Sources */ = {isa = PBXBuildFile; fileRef = 84D6DD960AD2F84F001E6F67 /* BetterAuthorizationSampleLib.c */; };
 		15E7F7710EAEA10C00D0D85D /* HelperToolMain.c in Sources */ = {isa = PBXBuildFile; fileRef = 48A782C70DB9492800B5F8B5 /* HelperToolMain.c */; };
 		15E7F7780EAEA10C00D0D85D /* MoreCFQ.c in Sources */ = {isa = PBXBuildFile; fileRef = 48EBCDB30DC95933002698DA /* MoreCFQ.c */; };
@@ -62,10 +74,20 @@
 			remoteGlobalIDString = 15E7F76D0EAEA10C00D0D85D;
 			remoteInfo = AuthorizedTaskHelperTool_DaemonMaster;
 		};
+		15A1FDE50EB7C11F000AA708 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15A1FCB50EB7C0D4000AA708;
+			remoteInfo = TestHarnessGetProcList;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		15A1FC190EB7B4BF000AA708 /* HelperToolTaskDoGetHelperVersion.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HelperToolTaskDoGetHelperVersion.c; sourceTree = "<group>"; };
+		15A1FCAF0EB7BF2A000AA708 /* TestHarnessGetProcessList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TestHarnessGetProcessList.c; sourceTree = "<group>"; };
+		15A1FCB60EB7C0D4000AA708 /* TestHarnessGetProcList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestHarnessGetProcList; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E7F5D90EAE889200D0D85D /* AuthorizedTasks_DaemonMaster.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AuthorizedTasks_DaemonMaster.c; sourceTree = "<group>"; };
 		15E7F5DA0EAE889200D0D85D /* AuthorizedTasks_DaemonMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizedTasks_DaemonMaster.h; sourceTree = "<group>"; };
 		15E7F5DB0EAE889200D0D85D /* CommandProcs_DaemonMaster.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommandProcs_DaemonMaster.c; sourceTree = "<group>"; };
@@ -91,10 +113,19 @@
 		84D6DDDB0AD302A2001E6F67 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		E449EC6E0B619E02009E190A /* AuthorizedTaskHelperToolInstaller */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AuthorizedTaskHelperToolInstaller; sourceTree = BUILT_PRODUCTS_DIR; };
 		E449EC820B619E4B009E190A /* BetterAuthorizationSampleLibInstallTool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BetterAuthorizationSampleLibInstallTool.c; sourceTree = "<group>"; };
-		E4F1F2FD0B0DED0C003CDB5F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		15A1FCB40EB7C0D4000AA708 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15A1FDDF0EB7C105000AA708 /* CoreFoundation.framework in Frameworks */,
+				15A1FDE00EB7C105000AA708 /* Security.framework in Frameworks */,
+				15A1FDE10EB7C105000AA708 /* CoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		15E7F7790EAEA10C00D0D85D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,9 +176,16 @@
 				48501E470DB552C4007D68DC /* CoreServices.framework */,
 				09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */,
 				84D6DDDB0AD302A2001E6F67 /* Security.framework */,
-				E4F1F2FD0B0DED0C003CDB5F /* Cocoa.framework */,
 			);
 			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		15A1FCAE0EB7BED8000AA708 /* Test Harnesses */ = {
+			isa = PBXGroup;
+			children = (
+				15A1FCAF0EB7BF2A000AA708 /* TestHarnessGetProcessList.c */,
+			);
+			name = "Test Harnesses";
 			sourceTree = "<group>";
 		};
 		15E7F5A40EAE861B00D0D85D /* DaemonMaster */ = {
@@ -166,6 +204,7 @@
 				E449EC6E0B619E02009E190A /* AuthorizedTaskHelperToolInstaller */,
 				48A77B4D0DB7DEB800B5F8B5 /* SSYAuthorizedTaskmaster.framework */,
 				15E7F8580EAEAEA500D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */,
+				15A1FCB60EB7C0D4000AA708 /* TestHarnessGetProcList */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +220,7 @@
 		4845C78C0DC6C251003E7D35 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				15A1FC190EB7B4BF000AA708 /* HelperToolTaskDoGetHelperVersion.c */,
 				15E7F5E40EAE8C2200D0D85D /* HelperToolTaskDoGetProcessList.c */,
 			);
 			name = Tasks;
@@ -189,6 +229,7 @@
 		48A77A670DB79F0800B5F8B5 /* Helper Tool */ = {
 			isa = PBXGroup;
 			children = (
+				15A1FCAE0EB7BED8000AA708 /* Test Harnesses */,
 				4845C78C0DC6C251003E7D35 /* Tasks */,
 				48A782C70DB9492800B5F8B5 /* HelperToolMain.c */,
 				48501E3E0DB54FDA007D68DC /* MoreSetup.h */,
@@ -243,6 +284,22 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		15A1FCB50EB7C0D4000AA708 /* TestHarnessGetProcList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15A1FDE40EB7C115000AA708 /* Build configuration list for PBXNativeTarget "TestHarnessGetProcList" */;
+			buildPhases = (
+				15A1FCB30EB7C0D4000AA708 /* Sources */,
+				15A1FCB40EB7C0D4000AA708 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestHarnessGetProcList;
+			productName = TestHarnessGetProcList;
+			productReference = 15A1FCB60EB7C0D4000AA708 /* TestHarnessGetProcList */;
+			productType = "com.apple.product-type.tool";
+		};
 		15E7F76D0EAEA10C00D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15E7F77D0EAEA10C00D0D85D /* Build configuration list for PBXNativeTarget "AuthorizedTaskHelperTool_DaemonMaster" */;
@@ -316,6 +373,7 @@
 				E449EC630B619E02009E190A /* AuthorizedTaskHelperToolInstaller */,
 				48A77B4C0DB7DEB800B5F8B5 /* SSYAuthorizedTaskmaster */,
 				15E7F76D0EAEA10C00D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */,
+				15A1FCB50EB7C0D4000AA708 /* TestHarnessGetProcList */,
 			);
 		};
 /* End PBXProject section */
@@ -331,6 +389,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		15A1FCB30EB7C0D4000AA708 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15A1FCBB0EB7C0ED000AA708 /* AuthorizedTasks_DaemonMaster.c in Sources */,
+				15A1FCBC0EB7C0ED000AA708 /* CommandProcs_DaemonMaster.c in Sources */,
+				15A1FCBD0EB7C0ED000AA708 /* BetterAuthorizationSampleLib.c in Sources */,
+				15A1FCBF0EB7C0ED000AA708 /* HelperToolTaskDoGetProcessList.c in Sources */,
+				15A1FCC00EB7C0ED000AA708 /* MoreCFQ.c in Sources */,
+				15A1FCC10EB7C0ED000AA708 /* HelperToolTaskDoGetHelperVersion.c in Sources */,
+				15A1FCC20EB7C0ED000AA708 /* TestHarnessGetProcessList.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		15E7F76E0EAEA10C00D0D85D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +413,7 @@
 				15E7F7710EAEA10C00D0D85D /* HelperToolMain.c in Sources */,
 				15E7F8010EAEAC6300D0D85D /* HelperToolTaskDoGetProcessList.c in Sources */,
 				15E7F7780EAEA10C00D0D85D /* MoreCFQ.c in Sources */,
+				15A1FC1A0EB7B4BF000AA708 /* HelperToolTaskDoGetHelperVersion.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +453,11 @@
 			target = 15E7F76D0EAEA10C00D0D85D /* AuthorizedTaskHelperTool_DaemonMaster */;
 			targetProxy = 15405CE50EB61C11009A7FF3 /* PBXContainerItemProxy */;
 		};
+		15A1FDE60EB7C11F000AA708 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15A1FCB50EB7C0D4000AA708 /* TestHarnessGetProcList */;
+			targetProxy = 15A1FDE50EB7C11F000AA708 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -407,6 +485,66 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = All;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		15A1FCB80EB7C0D5000AA708 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestHarnessGetProcList;
+			};
+			name = Debug;
+		};
+		15A1FCB90EB7C0D5000AA708 /* Debug64 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestHarnessGetProcList;
+			};
+			name = Debug64;
+		};
+		15A1FCBA0EB7C0D5000AA708 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestHarnessGetProcList;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -614,6 +752,16 @@
 				15405CDE0EB61C0A009A7FF3 /* Debug */,
 				15405CDF0EB61C0A009A7FF3 /* Debug64 */,
 				15405CE00EB61C0A009A7FF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		15A1FDE40EB7C115000AA708 /* Build configuration list for PBXNativeTarget "TestHarnessGetProcList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15A1FCB80EB7C0D5000AA708 /* Debug */,
+				15A1FCB90EB7C0D5000AA708 /* Debug64 */,
+				15A1FCBA0EB7C0D5000AA708 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
