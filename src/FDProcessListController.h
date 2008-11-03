@@ -12,6 +12,7 @@
 
 @interface FDProcessListController : NSWindowController {
     IBOutlet NSArrayController *processListArrayController;
+    IBOutlet NSProgressIndicator *refreshProgressIndicator;
 
     FDProcessInfoReader *processInfoReader;
 }
@@ -19,5 +20,7 @@
 - (id)init;
 - (void)windowDidLoad;
 - (void)dealloc;
+
+- (IBAction)refresh:(id)sender;
 
 @end

@@ -30,7 +30,7 @@
 - (void)windowDidLoad
 {
     //NSLog(@"FDProcessListController windowDidLoad");
-    [processListArrayController setContent:[self processListAsDicts]];
+    [self refresh:self];
 }
 
 - (void)dealloc
@@ -44,4 +44,12 @@
     return [processInfoReader processList];
 }
 
+//-- Actions ------------------------------------------------------------------
+
+- (IBAction)refresh:(id)sender
+{
+    [refreshProgressIndicator startAnimation:self];
+    [processListArrayController setContent:[self processListAsDicts]];
+    [refreshProgressIndicator stopAnimation:self];
+}
 @end
