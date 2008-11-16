@@ -1,0 +1,2 @@
+#!/bin/sh
+hg push ssh://fe4e.ath.cx//usr/local/hgrepo/macutils/DaemonMaster
