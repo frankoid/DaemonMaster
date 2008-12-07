@@ -13,6 +13,14 @@
 @interface FDProcessListController : NSWindowController {
     IBOutlet NSArrayController *processListArrayController;
     IBOutlet NSProgressIndicator *refreshProgressIndicator;
+    IBOutlet NSControl *refreshIntervalTextField;
+    IBOutlet NSControl *refreshIntervalStepper;
+    IBOutlet NSControl *refreshCountLabel;
+    
+    int refreshCount;
+    
+    NSTimer *refreshTimer;
+    NSTimeInterval refreshTimerInterval;
 
     FDProcessInfoReader *processInfoReader;
 }
@@ -22,5 +30,6 @@
 - (void)dealloc;
 
 - (IBAction)refresh:(id)sender;
+- (IBAction)takeRefreshIntervalFrom:(id)sender;
 
 @end

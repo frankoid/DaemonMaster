@@ -10,6 +10,7 @@
 		151C835C0E2E75A300053C9B /* FDAppListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151C835B0E2E75A200053C9B /* FDAppListController.m */; };
 		151C842E0E2E8AAA00053C9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151C842D0E2E8AAA00053C9B /* Security.framework */; };
 		151CDF370DE42F24004396B9 /* FDPathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CDF360DE42F24004396B9 /* FDPathUtils.m */; };
+		151F5E6E0EEC7E6E00DCA339 /* FDDMPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 151F5E6D0EEC7E6E00DCA339 /* FDDMPreferences.m */; };
 		153C2B450EB66D2B000EBBFA /* FDProcessListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C2B440EB66D2B000EBBFA /* FDProcessListController.m */; };
 		153C2B5B0EB67277000EBBFA /* ProcessList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153C2B590EB67277000EBBFA /* ProcessList.xib */; };
 		15405C620EB617F4009A7FF3 /* AppList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15405C600EB617F4009A7FF3 /* AppList.xib */; };
@@ -123,6 +124,8 @@
 		151C842D0E2E8AAA00053C9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		151CDF350DE42F24004396B9 /* FDPathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDPathUtils.h; path = src/FDPathUtils.h; sourceTree = "<group>"; };
 		151CDF360DE42F24004396B9 /* FDPathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDPathUtils.m; path = src/FDPathUtils.m; sourceTree = "<group>"; };
+		151F5E6C0EEC7E6E00DCA339 /* FDDMPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDDMPreferences.h; path = src/FDDMPreferences.h; sourceTree = "<group>"; };
+		151F5E6D0EEC7E6E00DCA339 /* FDDMPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDDMPreferences.m; path = src/FDDMPreferences.m; sourceTree = "<group>"; };
 		153C2B430EB66D2B000EBBFA /* FDProcessListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDProcessListController.h; path = src/FDProcessListController.h; sourceTree = "<group>"; };
 		153C2B440EB66D2B000EBBFA /* FDProcessListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDProcessListController.m; path = src/FDProcessListController.m; sourceTree = "<group>"; };
 		153C2B5A0EB67277000EBBFA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ProcessList.xib; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				151F5E6C0EEC7E6E00DCA339 /* FDDMPreferences.h */,
+				151F5E6D0EEC7E6E00DCA339 /* FDDMPreferences.m */,
 				15A1FE340EB7C91B000AA708 /* ValueTransformers */,
 				15E7F6350EAE935A00D0D85D /* AuthorizedTasks */,
 				151C835A0E2E75A200053C9B /* FDAppListController.h */,
@@ -448,6 +453,7 @@
 				15405D7E0EB63180009A7FF3 /* FDLaunchJobsController.m in Sources */,
 				153C2B450EB66D2B000EBBFA /* FDProcessListController.m in Sources */,
 				15A1FE750EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.m in Sources */,
+				151F5E6E0EEC7E6E00DCA339 /* FDDMPreferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
