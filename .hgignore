@@ -1,0 +1,4 @@
+^build
+^AuthorizedTasks/build
+.*~$
+.DS_Store$
