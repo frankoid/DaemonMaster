@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-// Loads and saves user preferences.  Other classes should use FDDMPrefences 
+// Loads and saves user preferences.  Other classes should use FDDMPreferences 
 // and not call NSUserDefaults directly.
 @interface FDDMPreferences : NSObject {
 
