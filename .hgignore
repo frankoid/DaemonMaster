@@ -2,3 +2,5 @@
 ^AuthorizedTasks/build
 .*~$
 .DS_Store$
+/francis.mode1v3$
+/francis.pbxuser$
