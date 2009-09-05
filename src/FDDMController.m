@@ -11,6 +11,7 @@
 #import "FDProcessListController.h"
 #import "FDAppListController.h"
 #import "FDLaunchJobsController.h"
+#import "FDBenchmarksController.h"
 
 @implementation FDDMController
 
@@ -48,5 +49,15 @@
     }
     [launchJobsController showWindow:self];
 }
+
+- (IBAction)showBenchmarksWindow:(id)sender;
+{
+    if (!benchmarksController)
+    {
+        benchmarksController = [[FDBenchmarksController alloc] init];
+    }
+    [benchmarksController showWindow:self];
+}
+
 
 @end

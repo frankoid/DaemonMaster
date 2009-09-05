@@ -9,13 +9,15 @@
 #import <Cocoa/Cocoa.h>
 
 @class FDAppListController;
-@class FDLaunchJobsController;
 @class FDProcessListController;
+@class FDLaunchJobsController;
+@class FDBenchmarksController;
 
 @interface FDDMController : NSObject {
-	FDProcessListController *processListController;
+    FDProcessListController *processListController;
     FDAppListController *appListController;
     FDLaunchJobsController *launchJobsController;
+    FDBenchmarksController *benchmarksController;
 }
 
 - (void)awakeFromNib;
@@ -23,5 +25,6 @@
 - (IBAction)showProcessListWindow:(id)sender;
 - (IBAction)showAppListWindow:(id)sender;
 - (IBAction)showLaunchJobsWindow:(id)sender;
+- (IBAction)showBenchmarksWindow:(id)sender;
 
 @end

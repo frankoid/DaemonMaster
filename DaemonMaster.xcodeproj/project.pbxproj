@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151114671051910D0016891D /* Benchmarks.xib in Resources */ = {isa = PBXBuildFile; fileRef = 151114651051910D0016891D /* Benchmarks.xib */; };
+		1511146D105191330016891D /* FDBenchmarksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1511146C105191330016891D /* FDBenchmarksController.m */; };
 		151C835C0E2E75A300053C9B /* FDAppListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151C835B0E2E75A200053C9B /* FDAppListController.m */; };
 		151C842E0E2E8AAA00053C9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151C842D0E2E8AAA00053C9B /* Security.framework */; };
 		151CDF370DE42F24004396B9 /* FDPathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 151CDF360DE42F24004396B9 /* FDPathUtils.m */; };
@@ -119,6 +121,9 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		151114661051910D0016891D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Benchmarks.xib; sourceTree = "<group>"; };
+		1511146B105191330016891D /* FDBenchmarksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDBenchmarksController.h; path = src/FDBenchmarksController.h; sourceTree = "<group>"; };
+		1511146C105191330016891D /* FDBenchmarksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDBenchmarksController.m; path = src/FDBenchmarksController.m; sourceTree = "<group>"; };
 		151C835A0E2E75A200053C9B /* FDAppListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDAppListController.h; path = src/FDAppListController.h; sourceTree = "<group>"; };
 		151C835B0E2E75A200053C9B /* FDAppListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDAppListController.m; path = src/FDAppListController.m; sourceTree = "<group>"; };
 		151C842D0E2E8AAA00053C9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
@@ -189,6 +194,8 @@
 				15E7F6350EAE935A00D0D85D /* AuthorizedTasks */,
 				151C835A0E2E75A200053C9B /* FDAppListController.h */,
 				151C835B0E2E75A200053C9B /* FDAppListController.m */,
+				1511146B105191330016891D /* FDBenchmarksController.h */,
+				1511146C105191330016891D /* FDBenchmarksController.m */,
 				15E7F68F0EAE961A00D0D85D /* FDDMAppDelegate.h */,
 				15E7F6900EAE961A00D0D85D /* FDDMAppDelegate.m */,
 				158D8E5D0DC6262D00521712 /* FDDMController.h */,
@@ -322,6 +329,7 @@
 				153C2B590EB67277000EBBFA /* ProcessList.xib */,
 				15405C600EB617F4009A7FF3 /* AppList.xib */,
 				15405D800EB633E3009A7FF3 /* LaunchJobs.xib */,
+				151114651051910D0016891D /* Benchmarks.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -429,6 +437,7 @@
 				15405D820EB633E3009A7FF3 /* LaunchJobs.xib in Resources */,
 				153C2B5B0EB67277000EBBFA /* ProcessList.xib in Resources */,
 				15A1FBF50EB7B200000AA708 /* Localizable.strings in Resources */,
+				151114671051910D0016891D /* Benchmarks.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +463,7 @@
 				153C2B450EB66D2B000EBBFA /* FDProcessListController.m in Sources */,
 				15A1FE750EB7CD2C000AA708 /* FDArrayToSpaceSeparatedStringTransformer.m in Sources */,
 				151F5E6E0EEC7E6E00DCA339 /* FDDMPreferences.m in Sources */,
+				1511146D105191330016891D /* FDBenchmarksController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +494,14 @@
 				089C165DFE840E0CC02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		151114651051910D0016891D /* Benchmarks.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				151114661051910D0016891D /* English */,
+			);
+			name = Benchmarks.xib;
 			sourceTree = "<group>";
 		};
 		153C2B590EB67277000EBBFA /* ProcessList.xib */ = {
