@@ -347,7 +347,7 @@ EXIT:
 
     if (retval)
     {
-        asl_log(asl, aslMsg, ASL_LEVEL_ERR, "DoGetProcessList returning error %d: %m", retval);
+        asl_log(asl, aslMsg, ASL_LEVEL_ERR, "DoGetProcessList returning error %d: %m", (int)retval);
     }
     return retval;
 }

@@ -47,7 +47,7 @@ static FDLaunchctlWrapper *sharedLaunchctlWrapper;
 - (NSArray *)list
 {
 	void *buf = malloc(PIPE_BUF_SIZE);
-	if (buf == 0) [NSException raise:FDOutOfMemoryException format:FDOutOfMemoryExceptionMessage];
+	if (buf == 0) [NSException raise:FDOutOfMemoryException format:@"%@", FDOutOfMemoryExceptionMessage];
 	
 	NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
 	
