@@ -1,2 +1,0 @@
-#!/bin/sh
-hg push ssh://hg@bitbucket.org/frankoid/daemonmaster
